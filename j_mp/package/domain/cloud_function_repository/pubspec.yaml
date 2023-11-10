@@ -1,0 +1,20 @@
+name: cloud_function_repository
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: '>=3.0.5 <4.0.0'
+
+dependencies:
+  cloud_functions: ^4.0.5
+  firebase_core: any
+  mankeli_core: ^0.0.2
+  meta: ^1.8.0
+
+dev_dependencies:
+  dart_code_metrics: any
+  flutter_test:
+    sdk: flutter
+  mankeli_analysis: ^1.1.0
+  mocktail: any
+  plugin_platform_interface: any

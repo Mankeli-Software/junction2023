@@ -1,0 +1,52 @@
+# Derry usage:
+# 1. Run 'pub global activate derry' to install derry CLI tools
+# 2. Run 'derry ls' to show all the script names within the project
+# 3. Run 'derry <script-name>' to run these scripts. 
+# See more: https://pub.dev/packages/derry
+pub:
+  clean:
+    - dart tool/script/pub/clean.dart
+  get:
+    - dart tool/script/pub/get.dart
+pod:
+  clean:
+    - cd ios && rm -rf Podfile.lock && rm -rf Pods && rm -rf Runner.xcworkspace && pod deintegrate && pod cache clean --all
+  get:
+    - cd ios && pod install --repo-update
+launch:
+  development:
+    - flutter run --flavor=development --target=lib/main/main_development.dart
+  staging:
+    - flutter run --flavor=staging --target=lib/main/main_staging.dart
+  production:
+    - flutter run --flavor=production --target=lib/main/main_production.dart
+build:
+  ios:
+    development:
+      - flutter build ios --release --flavor=development --target=lib/main/main_development.dart
+    staging:
+      - flutter build ios --release --flavor=staging --target=lib/main/main_staging.dart
+    production:
+      - flutter build ios --release --flavor=production --target=lib/main/main_production.dart
+  android:
+    development:
+      - flutter build apk --release --flavor=development --target=lib/main/main_development.dart
+    staging:
+      - flutter build apk --release --flavor=staging --target=lib/main/main_staging.dart
+    production:
+      - flutter build apk --release --flavor=production --target=lib/main/main_production.dart
+gen:
+  code:
+    - dart tool/script/gen/code.dart
+  asset:
+    - dart tool/script/gen/asset.dart
+add:
+  subfeature:
+    - dart pub global activate mason_cli
+    - mason update
+    - mason add mhs_flutter_subfeature --global --git-url https://github.com/Mankeli-Software/mason.git --git-path brick/mhs_flutter_subfeature
+    - mason upgrade --global
+    - mason make mhs_flutter_subfeature --on-conflict append
+
+
+  

@@ -1,0 +1,131 @@
+name: j_mp
+version: 1.0.0+1
+publish_to: none
+description: A platform for making juniors move
+
+environment:
+  sdk: '>=3.0.5 <4.0.0'
+
+dependencies:
+  analytic_repository:
+    path: package/domain/analytic_repository
+  async: any
+  authentication_repository:
+    path: package/domain/authentication_repository
+  auto_route: ^6.1.0
+  cache_repository:
+    path: package/domain/cache_repository
+  cached_network_image: any
+  cloud_function_repository:
+    path: package/domain/cloud_function_repository
+  cupertino_icons: ^1.0.2
+  database_repository:
+    path: package/domain/database_repository
+  deep_link_repository:
+    path: package/domain/deep_link_repository
+  firebase_crashlytics: ^3.1.0
+  firebase_remote_config: ^4.2.0
+  flutter:
+    sdk: flutter
+  flutter_bloc: any
+  flutter_localizations:
+    sdk: flutter
+  flutter_native_splash: any
+  flutter_spinkit: any
+  flutter_svg: 2.0.3
+  form_input:
+    path: package/application/form_input
+  formz: any
+  freezed: ^2.3.2
+  freezed_annotation: ^2.2.0
+  google_fonts: ^3.0.1
+  intl: any
+  json_annotation: ^4.8.0
+  json_serializable: ^6.6.1
+  mankeli_core: ^0.0.2
+  model:
+    path: package/domain/model
+  notification_repository:
+    path: package/domain/notification_repository
+  permission_handler: any
+  permission_repository:
+    path: package/domain/permission_repository
+  provider: ^6.0.5
+  storage_repository:
+    path: package/domain/storage_repository
+
+dev_dependencies:
+  auto_route_generator: ^6.1.0
+  bloc_test: ^9.1.1
+  build_runner: ^2.3.3 # Usage: dart run build_runner build
+  dart_code_metrics: any
+  flutter_gen_runner: ^5.1.0+1
+  flutter_test:
+    sdk: flutter
+  icons_launcher: ^2.1.0
+  mankeli_analysis: ^1.1.0
+  mocktail: ^0.3.0
+  plugin_platform_interface: any
+
+flutter_gen:
+  output: lib/resource/src/
+  line_length: 140
+  integrations:
+    flutter_svg: true
+    flare_flutter: true
+    rive: true
+    lottie: true
+
+flutter:
+  assets:
+    - asset/font/montserrat/
+    - asset/font/rubik/
+    - asset/svg/
+    - asset/app/development/
+    - asset/app/staging/
+    - asset/app/production/
+  uses-material-design: true
+  generate: true
+  fonts:
+    - family: Montserrat
+      fonts:
+        - asset: asset/font/montserrat/Montserrat-Black.ttf
+        - asset: asset/font/montserrat/Montserrat-BlackItalic.ttf
+        - asset: asset/font/montserrat/Montserrat-Bold.ttf
+        - asset: asset/font/montserrat/Montserrat-BoldItalic.ttf
+        - asset: asset/font/montserrat/Montserrat-ExtraBold.ttf
+        - asset: asset/font/montserrat/Montserrat-ExtraBoldItalic.ttf
+        - asset: asset/font/montserrat/Montserrat-ExtraLight.ttf
+        - asset: asset/font/montserrat/Montserrat-ExtraLightItalic.ttf
+        - asset: asset/font/montserrat/Montserrat-Italic.ttf
+        - asset: asset/font/montserrat/Montserrat-Light.ttf
+        - asset: asset/font/montserrat/Montserrat-LightItalic.ttf
+        - asset: asset/font/montserrat/Montserrat-Medium.ttf
+        - asset: asset/font/montserrat/Montserrat-MediumItalic.ttf
+        - asset: asset/font/montserrat/Montserrat-Regular.ttf
+        - asset: asset/font/montserrat/Montserrat-SemiBold.ttf
+        - asset: asset/font/montserrat/Montserrat-SemiBoldItalic.ttf
+        - asset: asset/font/montserrat/Montserrat-Thin.ttf
+        - asset: asset/font/montserrat/Montserrat-ThinItalic.ttf
+        - asset: asset/font/montserrat/Montserrat-Italic-VariableFont_wght.ttf
+        - asset: asset/font/montserrat/Montserrat-VariableFont_wght.ttf
+    - family: Rubik
+      fonts:
+        - asset: asset/font/rubik/Rubik-Black.ttf
+        - asset: asset/font/rubik/Rubik-BlackItalic.ttf
+        - asset: asset/font/rubik/Rubik-Bold.ttf
+        - asset: asset/font/rubik/Rubik-BoldItalic.ttf
+        - asset: asset/font/rubik/Rubik-ExtraBold.ttf
+        - asset: asset/font/rubik/Rubik-ExtraBoldItalic.ttf
+        - asset: asset/font/rubik/Rubik-Italic.ttf
+        - asset: asset/font/rubik/Rubik-Light.ttf
+        - asset: asset/font/rubik/Rubik-LightItalic.ttf
+        - asset: asset/font/rubik/Rubik-Medium.ttf
+        - asset: asset/font/rubik/Rubik-MediumItalic.ttf
+        - asset: asset/font/rubik/Rubik-Regular.ttf
+        - asset: asset/font/rubik/Rubik-SemiBold.ttf
+        - asset: asset/font/rubik/Rubik-SemiBoldItalic.ttf
+        - asset: asset/font/rubik/Rubik-VariableFont_wght.ttf
+        - asset: asset/font/rubik/Rubik-Italic-VariableFont_wght.ttf
+
+scripts: derry.yaml

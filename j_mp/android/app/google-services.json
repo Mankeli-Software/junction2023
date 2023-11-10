@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "91642931646",
+    "project_id": "junior-movement-platform",
+    "storage_bucket": "junior-movement-platform.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:91642931646:android:ce62475f71a784c572b1ef",
+        "android_client_info": {
+          "package_name": "co.mankeli.j_mp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7tATn6HwwTWI6ixOrPvFYAGT31Eq_DRU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:91642931646:android:0cdf3ea24296dd2572b1ef",
+        "android_client_info": {
+          "package_name": "co.mankeli.jmp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7tATn6HwwTWI6ixOrPvFYAGT31Eq_DRU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

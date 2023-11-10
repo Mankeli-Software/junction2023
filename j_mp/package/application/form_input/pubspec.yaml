@@ -1,0 +1,17 @@
+name: form_input
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: '>=3.0.5 <4.0.0'
+
+dependencies:
+  formz: ^0.4.1
+  model:
+    path: ../../domain/model
+
+dev_dependencies:
+  dart_code_metrics: any
+  flutter_test:
+    sdk: flutter
+  mankeli_analysis: ^1.1.0

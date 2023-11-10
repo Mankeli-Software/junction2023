@@ -1,0 +1,24 @@
+targets:
+  $default:
+    builders:
+      freezed:
+        enabled: true
+        generate_for:
+          - lib/**.dart
+        options:
+          build_extensions: { '.dart': '.gen.dart' }
+          required_inputs: ['.gen.dart']
+      json_serializable:json_serializable:
+        enabled: true
+        generate_for:
+          - lib/**.dart
+      auto_route_generator:auto_route_generator:
+       generate_for:
+          - lib/feature/**.dart
+      auto_route_generator:auto_router_generator:
+        generate_for:
+          - lib/utility/**.dart
+      flutter_gen_runner:flutter_gen_runner:
+        enabled: true
+        options:
+          build_extensions: { '.dart': '.gen.dart' }

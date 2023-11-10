@@ -1,0 +1,45 @@
+# This file contains configurations specific 
+# to the development flavor. Such configurations
+# could be launcher icons, splash screens etc. 
+
+icons_launcher:
+  image_path: asset/app/development/icon.png
+  platforms:
+    android:
+      enable: true
+      image_path: asset/app/development/icon_rounded.png
+      adaptive_background_image: asset/app/development/icon_background.png
+      adaptive_foreground_image: asset/app/development/icon_foreground.png
+      adaptive_round_image: asset/app/development/icon_round.png
+      adaptive_monochrome_image: asset/app/development/icon_rounded_monochrome.png
+    ios:
+      enable: true
+      image_path: asset/app/development/icon.png
+    web:
+      enable: false
+      image_path: asset/app/development/icon.png
+      favicon_path: asset/app/development/icon_round.png
+    macos:
+      enable: false
+      image_path: asset/app/development/icon.png
+    windows:
+      enable: false
+      image_path: asset/app/development/icon.png
+    linux:
+      enable: false
+      image_path: asset/app/development/icon.png
+      
+flutter_native_splash: 
+  color: "#000000"
+  image: asset/app/development/splash_screen.png
+  ios_content_mode: scaleAspectFill
+  android_gravity: fill
+  fullscreen: true
+  web: false
+  android_12:
+    image: asset/app/development/icon_foreground.png
+    branding: asset/app/development/branding.png
+    icon_background_color: "#ffffff"
+    color: "#ffffff"
+    icon_background_color_dark: "#000000"
+    color_dark: "#000000"

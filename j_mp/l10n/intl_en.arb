@@ -1,0 +1,252 @@
+{
+    "@@locale": "en",
+    "authenticationFailure": "Authentication failed: {reason}",
+    "@authenticationFailure": {
+        "description": "States a reason why authentication failed",
+        "placeholders": {
+            "reason": {
+                "type": "String",
+                "example": "Weak password"
+            }
+        }
+    },
+    "loadingProgress": "Loading - {progress}%",
+    "@loadingProgress": {
+        "description": "Loading progress in percentages",
+        "placeholders": {
+            "progress": {
+                "example": "55.0"
+            }
+        }
+    },
+    "personatedWelcomeText": "Hi,\n{personation}!",
+    "@personatedWelcomeText": {
+        "description": "Greeting based on email address or name",
+        "placeholders": {
+            "personation": {
+                "example": "Elon Musk"
+            }
+        }
+    },
+    "passwordResetSent": "Password reset email sent to  {email}",
+    "@passwordResetSent": {
+        "description": "A message stating that a password reset email has been sent to the given email address",
+        "placeholders": {
+           "email": {
+               "example": "elon@musk.com"
+           }
+        }
+    },
+    "welcomeText": "Welcome, fellow app user!",
+    "@welcomeText": {
+        "description": "Greeting for new users"
+    },
+    "logInAgainToProceed": "please log out and back in to proceed.",
+    "@logInAgainToProceed": {
+        "description": "Suggestion to fix error when attempting an action which requires recent login"
+    },
+    "signingInFailed": "signing in failed",
+    "@signingInFailed": {
+        "description": "Error message stating that signing in failed"
+    },
+    "signingUpFailed": "signing up failed",
+    "@signingUpFailed": {
+        "description": "Error message stating that signing up failed"
+    },
+    "passwordResetFailed": "password reset failed",
+    "@passwordResetFailed": {
+        "description": "Error message stating that password reset failed"
+    },
+    "emailUpdateFailed": "email update failed",
+    "@emailUpdateFailed": {
+        "description": "Error message stating that email update failed"
+    },
+    "invalidEmail": "invalid email",
+    "@invalidEmail": {
+        "description": "Error message shown when the given email is not valid"
+    },
+    "invalidPassword": "invalid password",
+    "@invalidPassword": {
+        "description": "Error message shown when the given password is not valid"
+    },
+    "passwordMustBeAtLeast8Characters": "must be at least 8 characters long.",
+    "@passwordMustBeAtLeast8Characters": {
+        "description": "Error message shown when password is too short"
+    },
+    "passwordMustContainNumber": "must contain at least one number.",
+    "@passwordMustContainNumber": {
+        "description": "Error message shown when password does not contain a number"
+    },
+    "passwordMustContainCapitalLetter": "must contain at least one capital letter.",
+    "@passwordMustContainCapitalLetter": {
+        "description": "Error message shown when password does not contain a capital letter"
+    },
+    "passwordMustContainLowercaseLetter": "must contain at least on lowercase letter.",
+    "@passwordMustContainLowercaseLetter": {
+        "description": "Error message shown when password does not contain a lowercase letter"
+    },
+    "unauthenticated": "Cannot complete the action while unauthenticated",
+    "@unauthenticated": {
+        "description": "Error message shown when an action is attempted while unauthenticated"
+    },
+    "weakPassword": "weak password",
+    "@weakPassword": {
+        "description": "Error message shown when the given password is too weak"
+    },
+    "passwordMismatch": "password mismatch",
+    "@passwordMismatch": {
+        "description": "Error message shown when the given passwords do not match"
+    },
+    "emailAddressTaken": "email address already in use",
+    "@emailAddressTaken": {
+        "description": "Error message shown when the given email address is already in use"
+    },
+    "operationNotAllowed": "operation not allowed, please contact support!",
+    "@operationNotAllowed": {
+        "description": "Error message shown when the given operation is not allowed (due to account lock etc.)"
+    },
+    "accountExistsWithDifferentCredential": "account already exists with different credential",
+    "@accountExistsWithDifferentCredential": {
+        "description":  "Error message shown when the given account already exists with a different credential (different auth provider)"
+    },
+    "invalidCredential": "invalid credential",
+    "@invalidCredential": {
+        "description": "Error message shown when the given credential is invalid"
+    },
+    "invalidVerificationCode": "invalid verification code",
+    "@invalidVerificationCode": {
+        "description": "Error message shown when the given verification code is invalid"
+    },
+    "invalidVerificationId": "invalid verification ID",
+    "@invalidVerificationId": {
+        "description": "Error message shown when the given verification ID is invalid"
+    },
+    "requiresRecentLogin": "requires recent login",
+    "@requiresRecentLogin": {
+        "description": "Error message shown when an action is attempted which requires recent login"
+    },
+    "tooManyRequests": "too many requests, please try again later",
+    "@tooManyRequests": {
+        "description":  "Error message shown when too many requests are made within a short period of time"
+    },
+    "missingAndroidPkgName": "missing Android package name, please contact support!",
+    "@missingAndroidPkgName": {
+        "description": "Error message shown when the Android package name is missing (related to authentication)"
+    },
+    "missingContinueUri": "missing continue URI, please contact support!",
+    "@missingContinueUri": {
+        "description": "Error message shown when the continue URI is missing (related to authentication)"
+    },
+    "missingIosBundleId": "missing iOS bundle ID, please contact support!",
+    "@missingIosBundleId": {
+        "description": "Error message shown when the iOS bundle ID is missing (related to authentication)"
+    },
+    "unauthorizedContinueUri": "unauthorized continue URI, please contact support!",
+    "@unauthorizedContinueUri": {
+        "description": "Error message shown when the continue URI is unauthorized (related to authentication)"
+    },
+    "expiredActionCode": "expired action code",
+    "@expiredActionCode": {
+        "description":  "Error message shown when the given action code is expired (related to authentication)"
+    },
+    "invalidActionCode": "invalid action code",
+    "@invalidActionCode": {
+        "description":  "Error message shown when the given action code is invalid (related to authentication)"
+    },
+    "invalidContinueUri": "invalid continue URI",
+    "@invalidContinueUri": {
+        "description": "Error message shown when the given continue URI is invalid (related to authentication)"
+    },
+    "userNotFound": "user not found",
+    "@userNotFound": {
+        "description": "Error message shown when the given user is not found"
+    },
+    "userDisabled": "user disabled",
+    "@userDisabled": {
+        "description": "Error message shown when the given user is disabled / restricted"
+    },
+    "unknownErrorOccured": "unknown error occurred",
+    "@unknownErrorOccured": {
+        "description": "Error message shown when an unknown error occurs"
+    },
+    "emailExplanation": "Let's get started by entering your email address.",
+    "@emailExplanation": {
+        "description": "Call to action description for authentication email input"
+    },
+    "signUpExplanation": "Looks like there is no account associated with this email address. Let's create one!",
+    "@signUpExplanation": {
+        "description": "Call to action description for creating a new account"
+    },
+   "signInExplanation": "Looks like there is already an account associated with this email address. Let's sign in!",
+   "@signInExplanation": {
+       "description": "Call to action description for signing in"
+   },
+    "email": "Email",
+    "@email": {
+        "description": "Title / Hint text for an email input"
+    },
+    "password": "Password",
+    "@password": {
+        "description": "Title / Hint text for a password input"
+    },
+    "confirmedPassword": "Password confirmation",
+    "@confirmedPassword": {
+        "description": "Title / Hint text for a password confirmation input"
+    },
+    "signIn": "Sign in",
+    "@signIn": {
+        "description": "Call to action text for a sign in button"
+    },
+    "signOut": "Sign out",
+    "@signOut": {
+        "description": "Call to action text for a sign out button"
+    },
+    "signUp": "Sign up",
+    "@signUp": {
+        "description": "Call to action text for a sign up button"
+    },
+    "next": "Next",
+    "@next": {
+        "description":  "Call to action text for a next button"
+    },
+    "previouse": "Previouse",
+    "@previouse": {
+        "description": "Call to action text for a previouse button"
+    },
+    "resetPassword": "Reset password",
+    "@resetPassword": {
+        "description": "Call to action text for a reset password button"
+    },
+    "dontYouHaveAccount": "Don't have an account? Click here to create one!",
+    "@dontYouHaveAccount": {
+        "description": "Call to action text for creating an account instead of signing in"
+    },
+    "doYouHaveAccount": "Do you have an account? Click here to sign in!",
+    "@doYouHaveAccount": {
+        "description": "Call to action text for signing in instead of creating an account"
+    },
+    "insufficientPermissions": "Insufficient permissions",
+    "@insufficientPermissions": {
+        "description": "Error message shown when the user does not have sufficient permissions"
+    },
+    "theFollowingPermissionsAreDenied": "The following permissions are denied",
+    "@theFollowingPermissionsAreDenied": {
+        "description": "A text describing some permissions are denied"
+    },
+    "theFollowingPermissionsAreRestricted": "The following permissions are restricted by the operating system. This could be due to parental controls or other restrictions. This part of the app cannot function without having the permission.",
+    "@theFollowingPermissionsAreRestricted": {
+        "description": "A text describing some permissions are restricted by the OS"
+    },
+    "theFollowingPermissionsArePermanentlyDenied": "The following permissions are permanently denied. You need to grant them in your phones settings.",
+    "@theFollowingPermissionsArePermanentlyDenied": {
+        "description": "A text describing some permissions are permanently denied and shall be granted in the settings" 
+    },
+    "grantPermissions": "Grant permissions",
+    "@grantPermissions": {
+        "description":  "A call to action text for granting permissions"
+    },
+    "openSettings": "Open settings",
+    "@openSettings": {
+        "description":  "A call to action text for opening the settings"
+    }
+}

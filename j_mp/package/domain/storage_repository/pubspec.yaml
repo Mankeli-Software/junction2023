@@ -1,0 +1,20 @@
+name: storage_repository
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: '>=3.0.5 <4.0.0'
+
+dependencies:
+  firebase_core: any
+  firebase_storage: ^11.0.6
+  mankeli_core: ^0.0.2
+  meta: any
+
+dev_dependencies:
+  dart_code_metrics: any
+  flutter_test:
+    sdk: flutter
+  mankeli_analysis: ^1.1.0
+  mocktail: any
+  plugin_platform_interface: any
