@@ -2,6 +2,8 @@ import Link from 'next/link'
 import MobileMenu from './mobile-menu'
 import Image from 'next/image'
 import JmpLogoRound from '@/public/images/j-mp_icon_noBG.png'
+import AppStore from '@/public/images/App_store_button.png'
+import GooglePlay from '@/public/images/Google_play_button.png'
 
 export default function Header() {
   return (
@@ -24,16 +26,13 @@ export default function Header() {
             {/* Desktop sign in links */}
             <ul className="flex grow justify-end flex-wrap items-center">
               <li>
-                <Link
-                  href="/signin"
-                  className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"
-                >
-                  Sign in
+                <Link href="https://youtu.be/dQw4w9WgXcQ?si=ETn2YjQIgkxEVDSc" className="">
+                  <Image className="full" src={GooglePlay} width={135} height={135} alt="Google Play" />
                 </Link>
               </li>
               <li>
-                <Link href="/signup" className="btn-sm text-white bg-purple-600 hover:bg-purple-700 ml-3">
-                  Sign up
+                <Link href="https://youtu.be/dQw4w9WgXcQ?si=ETn2YjQIgkxEVDSc" className="">
+                  <Image className="full" src={AppStore} width={120} height={120} alt="App Store" />
                 </Link>
               </li>
             </ul>
