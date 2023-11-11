@@ -8,12 +8,7 @@ class HideAndSeekState with _$HideAndSeekState {
   /// {@macro hide_and_seek_state}
   const factory HideAndSeekState({
     @Default(HideAndSeekStatus.lobby) HideAndSeekStatus status,
-    HideAndSeekGameState? state,
     CompassEvent? compassEvent,
-    @Default([]) List<LatLng> showLocations,
-    @Default(Duration.zero) Duration seekerCountdown,
-    LatLng? ownLocation,
-    @Default(1000) double distanceToClosest,
   }) = _HideAndSeekState;
 }
 

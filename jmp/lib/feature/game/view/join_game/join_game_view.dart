@@ -69,7 +69,8 @@ class JoinGameView extends StatelessWidget {
                 ),
                 const Spacer(),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
                   child: LinearProgressIndicator(
                     minHeight: 20,
                     backgroundColor: theme.primaryColor.withOpacity(0.4),
@@ -102,13 +103,15 @@ class JoinGameView extends StatelessWidget {
                   const Spacer(),
                   TextButton(
                     onPressed: () {
-                      // TODO(JTorkk): Add join game functionality
+                      context.router.push(const HideAndSeekRoute());
                     },
                     child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 30, vertical: 15),
                       decoration: BoxDecoration(
                         color: theme.primaryColor,
-                        borderRadius: const BorderRadius.all(Radius.circular(40)),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(40)),
                       ),
                       child: Text(
                         'Join Game',
@@ -187,7 +190,8 @@ class CustomScannerOverlayPainter extends CustomPainter {
 
       // Top right corner
       ..drawArc(
-        Rect.fromLTWH(size.width - cornerRadius * 2, 0, cornerRadius * 2, cornerRadius * 2),
+        Rect.fromLTWH(size.width - cornerRadius * 2, 0, cornerRadius * 2,
+            cornerRadius * 2),
         -pi / 2,
         pi / 2,
         false,
@@ -197,7 +201,8 @@ class CustomScannerOverlayPainter extends CustomPainter {
       // Bottom left corner
 
       ..drawArc(
-        Rect.fromLTWH(0, size.height - cornerRadius * 2, cornerRadius * 2, cornerRadius * 2),
+        Rect.fromLTWH(0, size.height - cornerRadius * 2, cornerRadius * 2,
+            cornerRadius * 2),
         pi / 2,
         pi / 2,
         false,
@@ -206,7 +211,8 @@ class CustomScannerOverlayPainter extends CustomPainter {
 
       // Bottom right corner
       ..drawArc(
-        Rect.fromLTWH(size.width - cornerRadius * 2, size.height - cornerRadius * 2, cornerRadius * 2, cornerRadius * 2),
+        Rect.fromLTWH(size.width - cornerRadius * 2,
+            size.height - cornerRadius * 2, cornerRadius * 2, cornerRadius * 2),
         0,
         pi / 2,
         false,

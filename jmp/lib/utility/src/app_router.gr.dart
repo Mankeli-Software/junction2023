@@ -78,13 +78,9 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
     HideAndSeekRoute.name: (routeData) {
-      final args = routeData.argsAs<HideAndSeekRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: HideAndSeekPage(
-          key: args.key,
-          sessionId: args.sessionId,
-        ),
+        child: const HideAndSeekPage(),
       );
     },
     ActionGameRoute.name: (routeData) {
@@ -315,40 +311,16 @@ class JoinGameRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [HideAndSeekPage]
-class HideAndSeekRoute extends PageRouteInfo<HideAndSeekRouteArgs> {
-  HideAndSeekRoute({
-    Key? key,
-    required String sessionId,
-    List<PageRouteInfo>? children,
-  }) : super(
+class HideAndSeekRoute extends PageRouteInfo<void> {
+  const HideAndSeekRoute({List<PageRouteInfo>? children})
+      : super(
           HideAndSeekRoute.name,
-          args: HideAndSeekRouteArgs(
-            key: key,
-            sessionId: sessionId,
-          ),
           initialChildren: children,
         );
 
   static const String name = 'HideAndSeekRoute';
 
-  static const PageInfo<HideAndSeekRouteArgs> page =
-      PageInfo<HideAndSeekRouteArgs>(name);
-}
-
-class HideAndSeekRouteArgs {
-  const HideAndSeekRouteArgs({
-    this.key,
-    required this.sessionId,
-  });
-
-  final Key? key;
-
-  final String sessionId;
-
-  @override
-  String toString() {
-    return 'HideAndSeekRouteArgs{key: $key, sessionId: $sessionId}';
-  }
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for

@@ -5,7 +5,13 @@ part of 'hide_and_seek.dart';
 /// {@endtemplate}
 class HideAndSeekView extends StatelessWidget {
   /// {@macro hide_and_seek_view}
-  const HideAndSeekView({super.key});
+  const HideAndSeekView({
+    super.key,
+    required this.details,
+  });
+
+  /// The game details
+  final GameDetails details;
 
   /// Shows minigame
   void showMiniGame(BuildContext context) {
@@ -40,9 +46,6 @@ class HideAndSeekView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = context.theme;
-    final user = context.user;
-
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -62,159 +65,9 @@ class HideAndSeekView extends StatelessWidget {
         listener: (context, state) {
           return;
         },
-        buildWhen: (s1, s2) => s1.state != s2.state,
+        buildWhen: (s1, s2) => true,
         builder: (context, state) {
-          final status = state.state?.status;
-          final isCreator = state.state?.creatorId == user.id!;
-
-          if (status == GameStatus.lobby) {
-            return Column(
-              children: [
-                Text(
-                  'Waiting for the game creator to start the game!',
-                ),
-                if (isCreator)
-                  ElevatedButton(
-                    onPressed: () {
-                      // TODO: start the game
-                    },
-                    child: Text(
-                      'Start the game',
-                    ),
-                  ),
-              ],
-            );
-          } else if (status == GameStatus.playing) {
-            final isFound = state.state?.playerData
-                    .where((pd) => pd.playerId == user.id)
-                    .firstOrNull
-                    ?.found ??
-                false;
-
-            final isSeeker = state.state?.isSeeker(user) ?? false;
-
-            return Column(
-              children: [
-                if (isFound)
-                  Text(
-                    'You have been found, wait for the next round!',
-                  )
-                else if (state.status == HideAndSeekStatus.counting)
-                  Text('The seeker is counting, hide!')
-                else if (state.status == HideAndSeekStatus.searching)
-                  Text('The seeker is searching, stay hidden!'),
-                if (isSeeker)
-                  LayoutBuilder(
-                    builder: (context, constraints) {
-                      final maxWidth = constraints.maxWidth * 0.8;
-
-                      return BlocBuilder<HideAndSeekCubit, HideAndSeekState>(
-                        buildWhen: (s1, s2) =>
-                            s1.compassEvent != s2.compassEvent ||
-                            s1.distanceToClosest != s2.distanceToClosest ||
-                            s1.ownLocation != s2.ownLocation,
-                        builder: (context, state) {
-                          final direction = state.compassEvent?.heading;
-                          final dist = state.distanceToClosest;
-
-                          final hintBearing = () {
-                            final latlng = state.showLocations.firstOrNull;
-                            if (latlng == null || state.ownLocation == null) {
-                              return null;
-                            }
-
-                            return Geolocator.bearingBetween(
-                              latlng.latitude,
-                              latlng.longitude,
-                              state.ownLocation!.latitude,
-                              state.ownLocation!.longitude,
-                            );
-                          }.call();
-
-                          return Transform.rotate(
-                            angle: ((direction ?? 0) + (hintBearing ?? 0)) *
-                                (pi / 180) *
-                                -1,
-                            child: SizedBox(
-                              width: maxWidth,
-                              height: maxWidth,
-                              child: Stack(
-                                children: [
-                                  if (hintBearing != null)
-                                    Align(
-                                      alignment: Alignment.topCenter,
-                                      child: FaIcon(
-                                        FontAwesomeIcons.chevronUp,
-                                        color: theme.onBackgroundColor,
-                                      ),
-                                    ),
-                                  Container(
-                                    width: maxWidth * 0.8,
-                                    height: maxWidth * 0.8,
-                                    decoration: BoxDecoration(
-                                      color: Colors.red.withOpacity(
-                                        dist > 500 ? 1.0 : 0.3,
-                                      ),
-                                      shape: BoxShape.circle,
-                                    ),
-                                  ),
-                                  Container(
-                                    width: maxWidth * 0.7,
-                                    height: maxWidth * 0.7,
-                                    decoration: BoxDecoration(
-                                      color: Colors.orange.withOpacity(
-                                        dist > 300 ? 1.0 : 0.3,
-                                      ),
-                                      shape: BoxShape.circle,
-                                    ),
-                                  ),
-                                  Container(
-                                    width: maxWidth * 0.6,
-                                    height: maxWidth * 0.6,
-                                    decoration: BoxDecoration(
-                                      color: Colors.yellow.withOpacity(
-                                        dist > 100 ? 1.0 : 0.3,
-                                      ),
-                                      shape: BoxShape.circle,
-                                    ),
-                                  ),
-                                  Container(
-                                    width: maxWidth * 0.5,
-                                    height: maxWidth * 0.5,
-                                    decoration: BoxDecoration(
-                                      color: Colors.lightGreen.withOpacity(
-                                        dist > 50 ? 1.0 : 0.3,
-                                      ),
-                                      shape: BoxShape.circle,
-                                    ),
-                                  ),
-                                  Container(
-                                    width: maxWidth * 0.4,
-                                    height: maxWidth * 0.4,
-                                    decoration: const BoxDecoration(
-                                      color: Colors.green,
-                                      shape: BoxShape.circle,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          );
-                        },
-                      );
-                    },
-                  ),
-              ],
-            );
-          }
-
-          return Column(
-            children: [
-              Text(
-                'Game finished, all of the players have been found',
-              ),
-            ],
-          );
+          return Container();
         },
       ),
     );

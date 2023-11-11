@@ -16,7 +16,20 @@ class ProfileView extends StatelessWidget {
       },
       buildWhen: (s1, s2) => true,
       builder: (context, state) {
-        return const Placeholder();
+        return TextButton(
+          onPressed: () {
+            context.router.push(
+              ActionGameRoute(
+                title: 'Duel of Blades!',
+                description:
+                    'Engage in an epic duel with a swashbuckling pirate! Use your phone as your blade, swiping and slashing with precision to emerge victorious. Fail to triumph in the allotted time, and your seeker gets a fleeting glimpse of your whereabouts.',
+                imageUrl:
+                    'https://firebasestorage.googleapis.com/v0/b/junior-movement-platform.appspot.com/o/pirate.png?alt=media&token=43fe5f0e-b1bf-4085-8a39-d8e5f071d9ed',
+              ),
+            );
+          },
+          child: const Text('open minigame'),
+        );
       },
     );
   }
