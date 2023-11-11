@@ -12,7 +12,6 @@ import 'package:database_repository/database_repository.dart';
 import 'package:deep_link_repository/deep_link_repository.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
-import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -39,87 +38,86 @@ class LaunchHelper {
     required Flavor flavor,
     required FirebaseOptions firebaseOptions,
   }) async {
-    /// Keeps the app from automatically closing the native splash screen.
-    /// Native splash screen can be closed by calling widgetsBinding.allowFirstFrame().
-    /// It is closed in lib/features/app/cubit/app_cubit.dart
-    final binding = WidgetsFlutterBinding.ensureInitialized()
-      ..deferFirstFrame();
-
-    await SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown,
-    ]);
-
-    await SystemChrome.setEnabledSystemUIMode(
-      SystemUiMode.manual,
-      overlays: [
-        SystemUiOverlay.top,
-      ],
-    );
-
-    await Firebase.initializeApp(
-      options: firebaseOptions,
-    );
-
-    await FirebaseRemoteConfig.instance.setConfigSettings(
-      RemoteConfigSettings(
-        fetchTimeout: const Duration(minutes: 1),
-        minimumFetchInterval: const Duration(minutes: 30),
-      ),
-    );
-    await FirebaseRemoteConfig.instance.fetchAndActivate();
-
-    final databaseRepository = DatabaseRepository();
-
-    final analyticRepository = AnalyticRepository();
-
-    final authenticationRepository = AuthenticationRepository();
-
-    final notificationRepository = NotificationRepository();
-
-    final deepLinkRepository = DeepLinkRepository();
-
-    final cacheRepository = CacheRepository();
-    final permissionRepository = PermissionRepository();
-
-    final cloudFunctionRepository = CloudFunctionRepository();
-
-    final storageRepository = StorageRepository();
-
-    final router = AppRouter(
-      databaseRepository: databaseRepository,
-      analyticRepository: analyticRepository,
-      permissionRepository: permissionRepository,
-      cacheRepository: cacheRepository,
-      cloudFunctionRepository: cloudFunctionRepository,
-      storageRepository: storageRepository,
-      authenticationRepository: authenticationRepository,
-      notificationRepository: notificationRepository,
-      deepLinkRepository: deepLinkRepository,
-    );
-
-    AppLogger.instance.crashlytic = (message, [error, stackTrace]) {
-      FirebaseCrashlytics.instance.recordError(
-        error,
-        stackTrace,
-        fatal: true,
-        reason: message,
-      );
-    };
-
-    AppLogger.instance.analytic = (message, [_, __]) {
-      analyticRepository.logEvent(message);
-    };
-
-    await AssetsExtension.splashScreen(flavor).cache();
-
-    binding.addPostFrameCallback((_) {
-      binding.allowFirstFrame();
-    });
-
     /// Catches uncaught errors and logs them to crashlytics.
-    runZonedGuarded(
-      () {
+    await runZonedGuarded(
+      () async {
+        /// Keeps the app from automatically closing the native splash screen.
+        /// Native splash screen can be closed by calling widgetsBinding.allowFirstFrame().
+        /// It is closed in lib/features/app/cubit/app_cubit.dart
+        final binding = WidgetsFlutterBinding.ensureInitialized()
+          ..deferFirstFrame();
+
+        await SystemChrome.setPreferredOrientations([
+          DeviceOrientation.portraitUp,
+          DeviceOrientation.portraitDown,
+        ]);
+
+        await SystemChrome.setEnabledSystemUIMode(
+          SystemUiMode.manual,
+          overlays: [
+            SystemUiOverlay.top,
+          ],
+        );
+
+        await Firebase.initializeApp(
+          options: firebaseOptions,
+        );
+
+        // await FirebaseRemoteConfig.instance.setConfigSettings(
+        //   RemoteConfigSettings(
+        //     fetchTimeout: const Duration(minutes: 1),
+        //     minimumFetchInterval: const Duration(minutes: 30),
+        //   ),
+        // );
+        // await FirebaseRemoteConfig.instance.fetchAndActivate();
+
+        final databaseRepository = DatabaseRepository();
+
+        final analyticRepository = AnalyticRepository();
+
+        final authenticationRepository = AuthenticationRepository();
+
+        final notificationRepository = NotificationRepository();
+
+        final deepLinkRepository = DeepLinkRepository();
+
+        final cacheRepository = CacheRepository();
+        final permissionRepository = PermissionRepository();
+
+        final cloudFunctionRepository = CloudFunctionRepository();
+
+        final storageRepository = StorageRepository();
+
+        final router = AppRouter(
+          databaseRepository: databaseRepository,
+          analyticRepository: analyticRepository,
+          permissionRepository: permissionRepository,
+          cacheRepository: cacheRepository,
+          cloudFunctionRepository: cloudFunctionRepository,
+          storageRepository: storageRepository,
+          authenticationRepository: authenticationRepository,
+          notificationRepository: notificationRepository,
+          deepLinkRepository: deepLinkRepository,
+        );
+
+        AppLogger.instance.crashlytic = (message, [error, stackTrace]) {
+          FirebaseCrashlytics.instance.recordError(
+            error,
+            stackTrace,
+            fatal: true,
+            reason: message,
+          );
+        };
+
+        AppLogger.instance.analytic = (message, [_, __]) {
+          analyticRepository.logEvent(message);
+        };
+
+        await AssetsExtension.splashScreen(flavor).cache();
+
+        binding.addPostFrameCallback((_) {
+          binding.allowFirstFrame();
+        });
         runApp(
           _Bootstrap(
             flavor: flavor,
