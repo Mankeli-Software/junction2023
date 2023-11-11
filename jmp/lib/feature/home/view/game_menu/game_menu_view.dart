@@ -31,7 +31,7 @@ class GameMenuView extends StatelessWidget {
         id: '5f9fa253-7d28-4b6b-91d6-c3c04e3a974b',
         imgageUrl:
             'https://firebasestorage.googleapis.com/v0/b/junior-movement-platform.appspot.com/o/DALL%C2%B7E%202023-11-11%2016.18.59%20-%20A%20very%20simple%2C%20cartoonish%20banner%20for%20the%20game%2C%20focusing%20on%20the%20theme%20of%20adventure%20and%20physical%20activity%2C%20without%20any%20text%20or%20name.%20Central%20to%20the%20imag.png?alt=media&token=3a9729c5-a8ea-4fa4-8fb4-96ac5576de83',
-        title: 'Explore & Exercise',
+        title: 'ExploreX',
         decription:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis ipsum leo, id consectetur metus sollicitudin non. Donec a rutrum nunc. Vestibulum semper gravida diam nec malesuada. Proin suscipit venenatis nisl vitae efficitur. Cras at eleifend felis. In hac habitasse platea dictumst. Etiam aliquam rhoncus mauris at egestas. Praesent facilisis vulputate arcu eu dignissim. Suspendisse nulla felis, rutrum sit amet tempus sed, sagittis id metus.',
         subtitle: 'Uncover Adventures, Stay Active!',
