@@ -107,7 +107,9 @@ class JoinGameView extends StatelessWidget {
                     },
                     child: Container(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 30, vertical: 15),
+                        horizontal: 30,
+                        vertical: 15,
+                      ),
                       decoration: BoxDecoration(
                         color: theme.primaryColor,
                         borderRadius:
@@ -190,8 +192,12 @@ class CustomScannerOverlayPainter extends CustomPainter {
 
       // Top right corner
       ..drawArc(
-        Rect.fromLTWH(size.width - cornerRadius * 2, 0, cornerRadius * 2,
-            cornerRadius * 2),
+        Rect.fromLTWH(
+          size.width - cornerRadius * 2,
+          0,
+          cornerRadius * 2,
+          cornerRadius * 2,
+        ),
         -pi / 2,
         pi / 2,
         false,
@@ -201,8 +207,12 @@ class CustomScannerOverlayPainter extends CustomPainter {
       // Bottom left corner
 
       ..drawArc(
-        Rect.fromLTWH(0, size.height - cornerRadius * 2, cornerRadius * 2,
-            cornerRadius * 2),
+        Rect.fromLTWH(
+          0,
+          size.height - cornerRadius * 2,
+          cornerRadius * 2,
+          cornerRadius * 2,
+        ),
         pi / 2,
         pi / 2,
         false,
@@ -211,8 +221,12 @@ class CustomScannerOverlayPainter extends CustomPainter {
 
       // Bottom right corner
       ..drawArc(
-        Rect.fromLTWH(size.width - cornerRadius * 2,
-            size.height - cornerRadius * 2, cornerRadius * 2, cornerRadius * 2),
+        Rect.fromLTWH(
+          size.width - cornerRadius * 2,
+          size.height - cornerRadius * 2,
+          cornerRadius * 2,
+          cornerRadius * 2,
+        ),
         0,
         pi / 2,
         false,
