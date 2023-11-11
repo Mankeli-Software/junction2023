@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'J-MP',
+  title: 'J-mp',
   description: 'Junior Movement Platform',
 }
 
