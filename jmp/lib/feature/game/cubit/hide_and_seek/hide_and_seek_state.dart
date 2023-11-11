@@ -7,8 +7,13 @@ part of 'hide_and_seek.dart';
 class HideAndSeekState with _$HideAndSeekState {
   /// {@macro hide_and_seek_state}
   const factory HideAndSeekState({
-    @Default(HideAndSeekStatus.initializing)
-        HideAndSeekStatus status,
+    @Default(HideAndSeekStatus.lobby) HideAndSeekStatus status,
+    HideAndSeekGameState? state,
+    CompassEvent? compassEvent,
+    @Default([]) List<LatLng> showLocations,
+    @Default(Duration.zero) Duration seekerCountdown,
+    LatLng? ownLocation,
+    @Default(1000) double distanceToClosest,
   }) = _HideAndSeekState;
 }
 
@@ -18,30 +23,14 @@ class HideAndSeekState with _$HideAndSeekState {
 /// {@endtemplate}
 enum HideAndSeekStatus {
   /// {@macro hide_and_seek_status}
-  ///
-  /// The [HideAndSeekCubit] is currently being initialized
-  initializing,
+  lobby,
 
   /// {@macro hide_and_seek_status}
-  ///
-  /// The [HideAndSeekCubit] is not currently doing anything.
-  idle,
+  counting,
 
   /// {@macro hide_and_seek_status}
-  ///
-  /// The [HideAndSeekCubit] is doing some loading, calling
-  /// repositories etc.
-  busy,
+  searching,
 
   /// {@macro hide_and_seek_status}
-  ///
-  /// The [HideAndSeekCubit] has completed its task successfully
-  /// and is not currently doing anything.
-  success,
-
-  /// {@macro hide_and_seek_status}
-  ///
-  /// The [HideAndSeekCubit] has completed its task with a failure
-  /// and is not currently doing anything.
-  failure,
+  finished,
 }

@@ -161,10 +161,12 @@ class GameMenuView extends StatelessWidget {
                                   transitionOnUserGestures: true,
                                   tag: game.id,
                                   child: CachedNetworkImage(
-                                    alignment: Alignment(0, game.verticalAlignment),
+                                    alignment:
+                                        Alignment(0, game.verticalAlignment),
                                     fit: BoxFit.fitWidth,
                                     imageUrl: game.imgageUrl,
-                                    errorWidget: (context, url, error) => const Center(
+                                    errorWidget: (context, url, error) =>
+                                        const Center(
                                       child: FaIcon(
                                         FontAwesomeIcons.triangleExclamation,
                                       ),
@@ -174,11 +176,13 @@ class GameMenuView extends StatelessWidget {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 15, vertical: 20),
                               child: Row(
                                 children: [
                                   Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       Text(

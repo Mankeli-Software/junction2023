@@ -17,6 +17,9 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$ActionGameState {
   ActionGameStatus get status => throw _privateConstructorUsedError;
+  int get currentProgress => throw _privateConstructorUsedError;
+  int get requiredProgress => throw _privateConstructorUsedError;
+  Duration get timeLeft => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ActionGameStateCopyWith<ActionGameState> get copyWith =>
@@ -29,7 +32,11 @@ abstract class $ActionGameStateCopyWith<$Res> {
           ActionGameState value, $Res Function(ActionGameState) then) =
       _$ActionGameStateCopyWithImpl<$Res, ActionGameState>;
   @useResult
-  $Res call({ActionGameStatus status});
+  $Res call(
+      {ActionGameStatus status,
+      int currentProgress,
+      int requiredProgress,
+      Duration timeLeft});
 }
 
 /// @nodoc
@@ -46,12 +53,27 @@ class _$ActionGameStateCopyWithImpl<$Res, $Val extends ActionGameState>
   @override
   $Res call({
     Object? status = null,
+    Object? currentProgress = null,
+    Object? requiredProgress = null,
+    Object? timeLeft = null,
   }) {
     return _then(_value.copyWith(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as ActionGameStatus,
+      currentProgress: null == currentProgress
+          ? _value.currentProgress
+          : currentProgress // ignore: cast_nullable_to_non_nullable
+              as int,
+      requiredProgress: null == requiredProgress
+          ? _value.requiredProgress
+          : requiredProgress // ignore: cast_nullable_to_non_nullable
+              as int,
+      timeLeft: null == timeLeft
+          ? _value.timeLeft
+          : timeLeft // ignore: cast_nullable_to_non_nullable
+              as Duration,
     ) as $Val);
   }
 }
@@ -64,7 +86,11 @@ abstract class _$$ActionGameStateImplCopyWith<$Res>
       __$$ActionGameStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ActionGameStatus status});
+  $Res call(
+      {ActionGameStatus status,
+      int currentProgress,
+      int requiredProgress,
+      Duration timeLeft});
 }
 
 /// @nodoc
@@ -79,12 +105,27 @@ class __$$ActionGameStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? status = null,
+    Object? currentProgress = null,
+    Object? requiredProgress = null,
+    Object? timeLeft = null,
   }) {
     return _then(_$ActionGameStateImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as ActionGameStatus,
+      currentProgress: null == currentProgress
+          ? _value.currentProgress
+          : currentProgress // ignore: cast_nullable_to_non_nullable
+              as int,
+      requiredProgress: null == requiredProgress
+          ? _value.requiredProgress
+          : requiredProgress // ignore: cast_nullable_to_non_nullable
+              as int,
+      timeLeft: null == timeLeft
+          ? _value.timeLeft
+          : timeLeft // ignore: cast_nullable_to_non_nullable
+              as Duration,
     ));
   }
 }
@@ -92,15 +133,28 @@ class __$$ActionGameStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ActionGameStateImpl implements _ActionGameState {
-  const _$ActionGameStateImpl({this.status = ActionGameStatus.initializing});
+  const _$ActionGameStateImpl(
+      {this.status = ActionGameStatus.initializing,
+      this.currentProgress = 1,
+      this.requiredProgress = 30,
+      this.timeLeft = const Duration(minutes: 1)});
 
   @override
   @JsonKey()
   final ActionGameStatus status;
+  @override
+  @JsonKey()
+  final int currentProgress;
+  @override
+  @JsonKey()
+  final int requiredProgress;
+  @override
+  @JsonKey()
+  final Duration timeLeft;
 
   @override
   String toString() {
-    return 'ActionGameState(status: $status)';
+    return 'ActionGameState(status: $status, currentProgress: $currentProgress, requiredProgress: $requiredProgress, timeLeft: $timeLeft)';
   }
 
   @override
@@ -108,11 +162,18 @@ class _$ActionGameStateImpl implements _ActionGameState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ActionGameStateImpl &&
-            (identical(other.status, status) || other.status == status));
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.currentProgress, currentProgress) ||
+                other.currentProgress == currentProgress) &&
+            (identical(other.requiredProgress, requiredProgress) ||
+                other.requiredProgress == requiredProgress) &&
+            (identical(other.timeLeft, timeLeft) ||
+                other.timeLeft == timeLeft));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, status);
+  int get hashCode => Object.hash(
+      runtimeType, status, currentProgress, requiredProgress, timeLeft);
 
   @JsonKey(ignore: true)
   @override
@@ -123,11 +184,20 @@ class _$ActionGameStateImpl implements _ActionGameState {
 }
 
 abstract class _ActionGameState implements ActionGameState {
-  const factory _ActionGameState({final ActionGameStatus status}) =
-      _$ActionGameStateImpl;
+  const factory _ActionGameState(
+      {final ActionGameStatus status,
+      final int currentProgress,
+      final int requiredProgress,
+      final Duration timeLeft}) = _$ActionGameStateImpl;
 
   @override
   ActionGameStatus get status;
+  @override
+  int get currentProgress;
+  @override
+  int get requiredProgress;
+  @override
+  Duration get timeLeft;
   @override
   @JsonKey(ignore: true)
   _$$ActionGameStateImplCopyWith<_$ActionGameStateImpl> get copyWith =>
