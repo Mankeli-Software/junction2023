@@ -425,7 +425,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3D4A52HYSY;
 				ENABLE_BITCODE = NO;
-				FLAVOR_APP_NAME = "J Mp";
+				FLAVOR_APP_NAME = "J-mp";
 				FLUTTER_TARGET = "${PROJECT_DIR}/../lib/main/main_production.dart";
 				INFOPLIST_FILE = Runner/Info.plist;
 				LAUNCH_SCREEN_STORYBOARD = LaunchScreenProduction;
@@ -559,7 +559,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3D4A52HYSY;
 				ENABLE_BITCODE = NO;
-				FLAVOR_APP_NAME = "J Mp";
+				FLAVOR_APP_NAME = "J-mp";
 				FLUTTER_TARGET = "${PROJECT_DIR}/../lib/main/main_production.dart";
 				INFOPLIST_FILE = Runner/Info.plist;
 				LAUNCH_SCREEN_STORYBOARD = LaunchScreenProduction;
@@ -585,7 +585,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3D4A52HYSY;
 				ENABLE_BITCODE = NO;
-				FLAVOR_APP_NAME = "J Mp";
+				FLAVOR_APP_NAME = "J-mp";
 				FLUTTER_TARGET = "${PROJECT_DIR}/../lib/main/main_production.dart";
 				INFOPLIST_FILE = Runner/Info.plist;
 				LAUNCH_SCREEN_STORYBOARD = LaunchScreenProduction;
@@ -666,7 +666,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3D4A52HYSY;
 				ENABLE_BITCODE = NO;
-				FLAVOR_APP_NAME = "[DEV] J Mp";
+				FLAVOR_APP_NAME = "[DEV] J-mp";
 				FLUTTER_TARGET = "${PROJECT_DIR}/../lib/main/main_development.dart";
 				INFOPLIST_FILE = Runner/Info.plist;
 				LAUNCH_SCREEN_STORYBOARD = LaunchScreenDevelopment;
@@ -745,7 +745,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3D4A52HYSY;
 				ENABLE_BITCODE = NO;
-				FLAVOR_APP_NAME = "[DEV] J Mp";
+				FLAVOR_APP_NAME = "[DEV] J-mp";
 				FLUTTER_TARGET = "${PROJECT_DIR}/../lib/main/main_development.dart";
 				INFOPLIST_FILE = Runner/Info.plist;
 				LAUNCH_SCREEN_STORYBOARD = LaunchScreenDevelopment;
@@ -821,7 +821,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3D4A52HYSY;
 				ENABLE_BITCODE = NO;
-				FLAVOR_APP_NAME = "[DEV] J Mp";
+				FLAVOR_APP_NAME = "[DEV] J-mp";
 				FLUTTER_TARGET = "${PROJECT_DIR}/../lib/main/main_development.dart";
 				INFOPLIST_FILE = Runner/Info.plist;
 				LAUNCH_SCREEN_STORYBOARD = LaunchScreenDevelopment;
@@ -902,7 +902,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3D4A52HYSY;
 				ENABLE_BITCODE = NO;
-				FLAVOR_APP_NAME = "[STG] J Mp";
+				FLAVOR_APP_NAME = "[STG] J-mp";
 				FLUTTER_TARGET = "${PROJECT_DIR}/../lib/main/main_staging.dart";
 				INFOPLIST_FILE = Runner/Info.plist;
 				LAUNCH_SCREEN_STORYBOARD = LaunchScreenStaging;
@@ -981,7 +981,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3D4A52HYSY;
 				ENABLE_BITCODE = NO;
-				FLAVOR_APP_NAME = "[STG] J Mp";
+				FLAVOR_APP_NAME = "[STG] J-mp";
 				FLUTTER_TARGET = "${PROJECT_DIR}/../lib/main/main_staging.dart";
 				INFOPLIST_FILE = Runner/Info.plist;
 				LAUNCH_SCREEN_STORYBOARD = LaunchScreenStaging;
@@ -1057,7 +1057,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3D4A52HYSY;
 				ENABLE_BITCODE = NO;
-				FLAVOR_APP_NAME = "[STG] J Mp";
+				FLAVOR_APP_NAME = "[STG] J-mp";
 				FLUTTER_TARGET = "${PROJECT_DIR}/../lib/main/main_staging.dart";
 				INFOPLIST_FILE = Runner/Info.plist;
 				LAUNCH_SCREEN_STORYBOARD = LaunchScreenStaging;
