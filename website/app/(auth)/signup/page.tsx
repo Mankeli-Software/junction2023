@@ -61,9 +61,6 @@ export default function SignUp() {
                   <input id="password" type="password" className="form-input w-full text-gray-300" placeholder="Password (at least 10 characters)" required />
                 </div>
               </div>
-              <div className="text-sm text-gray-500 text-center">
-                I agree to be contacted by Open PRO about this offer as per the Open PRO <Link href="#" className="underline text-gray-400 hover:text-gray-200 hover:no-underline transition duration-150 ease-in-out">Privacy Policy</Link>.
-              </div>
               <div className="flex flex-wrap -mx-3 mt-6">
                 <div className="w-full px-3">
                   <button className="btn text-white bg-purple-600 hover:bg-purple-700 w-full">Sign up</button>
@@ -71,7 +68,7 @@ export default function SignUp() {
               </div>
             </form>
             <div className="text-gray-400 text-center mt-6">
-              Already using Open PRO? <Link href="/signin" className="text-purple-600 hover:text-gray-200 transition duration-150 ease-in-out">Sign in</Link>
+              Already using J-mp? <Link href="/signin" className="text-purple-600 hover:text-gray-200 transition duration-150 ease-in-out">Sign in</Link>
             </div>
           </div>
 
