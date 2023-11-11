@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import MobileMenu from './mobile-menu'
 import Image from 'next/image'
-import JmpLogoRound from '@/public/images/jmp_logo_round.png'
+import JmpLogoRound from '@/public/images/j-mp_icon_noBG.png'
 
 export default function Header() {
   return (
