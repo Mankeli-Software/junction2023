@@ -46,20 +46,22 @@ class HideAndSeekView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = context.theme;
+
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'HapticHide',
-        ),
-        actions: [
-          IconButton(
-            icon: const FaIcon(
-              FontAwesomeIcons.play,
-            ),
-            onPressed: () => showMiniGame(context),
-          ),
-        ],
-      ),
+      // appBar: AppBar(
+      //   title: const Text(
+      //     'HapticHide',
+      //   ),
+      //   actions: [
+      //     IconButton(
+      //       icon: const FaIcon(
+      //         FontAwesomeIcons.play,
+      //       ),
+      //       onPressed: () => showMiniGame(context),
+      //     ),
+      //   ],
+      // ),
       body: BlocConsumer<HideAndSeekCubit, HideAndSeekState>(
         listenWhen: (s1, s2) => true,
         listener: (context, state) {
@@ -67,7 +69,38 @@ class HideAndSeekView extends StatelessWidget {
         },
         buildWhen: (s1, s2) => true,
         builder: (context, state) {
-          return Container();
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Hero(
+                transitionOnUserGestures: true,
+                tag: details.id,
+                child: CachedNetworkImage(
+                  alignment: Alignment(0, details.verticalAlignment),
+                  fit: BoxFit.fitHeight,
+                  imageUrl: details.imgageUrl,
+                  errorWidget: (context, url, error) => const Center(
+                    child: FaIcon(
+                      FontAwesomeIcons.triangleExclamation,
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 15,
+                ),
+                child: Text(
+                  'Players',
+                  style: theme.headlineMedium,
+                ),
+              ),
+              Container(
+                decoration: BoxDecoration(),
+              ),
+            ],
+          );
         },
       ),
     );

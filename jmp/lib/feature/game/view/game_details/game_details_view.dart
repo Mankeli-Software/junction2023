@@ -31,7 +31,9 @@ class GameDetailsView extends StatelessWidget {
           },
           child: NotificationListener<ScrollNotification>(
             onNotification: (scroll) {
-              context.read<GameDetailsCubit>().setScrollOffset(scroll.metrics.pixels);
+              context
+                  .read<GameDetailsCubit>()
+                  .setScrollOffset(scroll.metrics.pixels);
 
               return false;
             },
@@ -71,7 +73,9 @@ class GameDetailsView extends StatelessWidget {
                           Text(
                             game.title,
                             style: theme.headlineSmall.copyWith(
-                              color: state.titleIsDown ? theme.primaryColor : theme.backgroundColor,
+                              color: state.titleIsDown
+                                  ? theme.primaryColor
+                                  : theme.backgroundColor,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -107,18 +111,28 @@ class GameDetailsView extends StatelessWidget {
                       return ListTile(
                         title: Container(
                           color: theme.backgroundColor,
-                          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 20, vertical: 30),
                           height: 1200,
                           child: Column(
                             children: [
                               TextButton(
                                 onPressed: () {
-                                  // TODO(JTorkk): add start game
+                                  context.router.push(
+                                    HideAndSeekRoute(
+                                      details: game,
+                                    ),
+                                  );
                                 },
                                 child: Container(
-                                  padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 30,
+                                    vertical: 15,
+                                  ),
                                   decoration: BoxDecoration(
-                                    borderRadius: const BorderRadius.all(Radius.circular(30)),
+                                    borderRadius: const BorderRadius.all(
+                                      Radius.circular(30),
+                                    ),
                                     color: theme.primaryColor,
                                   ),
                                   child: Text(
@@ -163,42 +177,48 @@ class GameDetailsView extends StatelessWidget {
                                   ),
                                   FaIcon(
                                     FontAwesomeIcons.hand,
-                                    color: game.sensorTypes.contains(SensorTypes.haptic)
+                                    color: game.sensorTypes
+                                            .contains(SensorTypes.haptic)
                                         ? theme.primaryColor
                                         : theme.primaryColor.withOpacity(0.3),
                                   ),
                                   const Spacer(),
                                   FaIcon(
                                     FontAwesomeIcons.microphone,
-                                    color: game.sensorTypes.contains(SensorTypes.microphone)
+                                    color: game.sensorTypes
+                                            .contains(SensorTypes.microphone)
                                         ? theme.primaryColor
                                         : theme.primaryColor.withOpacity(0.3),
                                   ),
                                   const Spacer(),
                                   FaIcon(
                                     FontAwesomeIcons.locationArrow,
-                                    color: game.sensorTypes.contains(SensorTypes.location)
+                                    color: game.sensorTypes
+                                            .contains(SensorTypes.location)
                                         ? theme.primaryColor
                                         : theme.primaryColor.withOpacity(0.3),
                                   ),
                                   const Spacer(),
                                   FaIcon(
                                     FontAwesomeIcons.groupArrowsRotate,
-                                    color: game.sensorTypes.contains(SensorTypes.gyroscope)
+                                    color: game.sensorTypes
+                                            .contains(SensorTypes.gyroscope)
                                         ? theme.primaryColor
                                         : theme.primaryColor.withOpacity(0.3),
                                   ),
                                   const Spacer(),
                                   FaIcon(
                                     FontAwesomeIcons.compass,
-                                    color: game.sensorTypes.contains(SensorTypes.compass)
+                                    color: game.sensorTypes
+                                            .contains(SensorTypes.compass)
                                         ? theme.primaryColor
                                         : theme.primaryColor.withOpacity(0.3),
                                   ),
                                   const Spacer(),
                                   FaIcon(
                                     FontAwesomeIcons.gaugeHigh,
-                                    color: game.sensorTypes.contains(SensorTypes.accelerometer)
+                                    color: game.sensorTypes
+                                            .contains(SensorTypes.accelerometer)
                                         ? theme.primaryColor
                                         : theme.primaryColor.withOpacity(0.3),
                                   ),

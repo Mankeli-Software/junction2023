@@ -17,6 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$HideAndSeekState {
   HideAndSeekStatus get status => throw _privateConstructorUsedError;
+  Duration get countingDuration => throw _privateConstructorUsedError;
   CompassEvent? get compassEvent => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -30,7 +31,10 @@ abstract class $HideAndSeekStateCopyWith<$Res> {
           HideAndSeekState value, $Res Function(HideAndSeekState) then) =
       _$HideAndSeekStateCopyWithImpl<$Res, HideAndSeekState>;
   @useResult
-  $Res call({HideAndSeekStatus status, CompassEvent? compassEvent});
+  $Res call(
+      {HideAndSeekStatus status,
+      Duration countingDuration,
+      CompassEvent? compassEvent});
 }
 
 /// @nodoc
@@ -47,6 +51,7 @@ class _$HideAndSeekStateCopyWithImpl<$Res, $Val extends HideAndSeekState>
   @override
   $Res call({
     Object? status = null,
+    Object? countingDuration = null,
     Object? compassEvent = freezed,
   }) {
     return _then(_value.copyWith(
@@ -54,6 +59,10 @@ class _$HideAndSeekStateCopyWithImpl<$Res, $Val extends HideAndSeekState>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as HideAndSeekStatus,
+      countingDuration: null == countingDuration
+          ? _value.countingDuration
+          : countingDuration // ignore: cast_nullable_to_non_nullable
+              as Duration,
       compassEvent: freezed == compassEvent
           ? _value.compassEvent
           : compassEvent // ignore: cast_nullable_to_non_nullable
@@ -70,7 +79,10 @@ abstract class _$$HideAndSeekStateImplCopyWith<$Res>
       __$$HideAndSeekStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({HideAndSeekStatus status, CompassEvent? compassEvent});
+  $Res call(
+      {HideAndSeekStatus status,
+      Duration countingDuration,
+      CompassEvent? compassEvent});
 }
 
 /// @nodoc
@@ -85,6 +97,7 @@ class __$$HideAndSeekStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? status = null,
+    Object? countingDuration = null,
     Object? compassEvent = freezed,
   }) {
     return _then(_$HideAndSeekStateImpl(
@@ -92,6 +105,10 @@ class __$$HideAndSeekStateImplCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as HideAndSeekStatus,
+      countingDuration: null == countingDuration
+          ? _value.countingDuration
+          : countingDuration // ignore: cast_nullable_to_non_nullable
+              as Duration,
       compassEvent: freezed == compassEvent
           ? _value.compassEvent
           : compassEvent // ignore: cast_nullable_to_non_nullable
@@ -104,17 +121,22 @@ class __$$HideAndSeekStateImplCopyWithImpl<$Res>
 
 class _$HideAndSeekStateImpl implements _HideAndSeekState {
   const _$HideAndSeekStateImpl(
-      {this.status = HideAndSeekStatus.lobby, this.compassEvent});
+      {this.status = HideAndSeekStatus.lobby,
+      this.countingDuration = Duration.zero,
+      this.compassEvent});
 
   @override
   @JsonKey()
   final HideAndSeekStatus status;
   @override
+  @JsonKey()
+  final Duration countingDuration;
+  @override
   final CompassEvent? compassEvent;
 
   @override
   String toString() {
-    return 'HideAndSeekState(status: $status, compassEvent: $compassEvent)';
+    return 'HideAndSeekState(status: $status, countingDuration: $countingDuration, compassEvent: $compassEvent)';
   }
 
   @override
@@ -123,12 +145,15 @@ class _$HideAndSeekStateImpl implements _HideAndSeekState {
         (other.runtimeType == runtimeType &&
             other is _$HideAndSeekStateImpl &&
             (identical(other.status, status) || other.status == status) &&
+            (identical(other.countingDuration, countingDuration) ||
+                other.countingDuration == countingDuration) &&
             (identical(other.compassEvent, compassEvent) ||
                 other.compassEvent == compassEvent));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, status, compassEvent);
+  int get hashCode =>
+      Object.hash(runtimeType, status, countingDuration, compassEvent);
 
   @JsonKey(ignore: true)
   @override
@@ -141,10 +166,13 @@ class _$HideAndSeekStateImpl implements _HideAndSeekState {
 abstract class _HideAndSeekState implements HideAndSeekState {
   const factory _HideAndSeekState(
       {final HideAndSeekStatus status,
+      final Duration countingDuration,
       final CompassEvent? compassEvent}) = _$HideAndSeekStateImpl;
 
   @override
   HideAndSeekStatus get status;
+  @override
+  Duration get countingDuration;
   @override
   CompassEvent? get compassEvent;
   @override

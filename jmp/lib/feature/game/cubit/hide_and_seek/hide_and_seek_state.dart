@@ -8,6 +8,7 @@ class HideAndSeekState with _$HideAndSeekState {
   /// {@macro hide_and_seek_state}
   const factory HideAndSeekState({
     @Default(HideAndSeekStatus.lobby) HideAndSeekStatus status,
+    @Default(Duration.zero) Duration countingDuration,
     CompassEvent? compassEvent,
   }) = _HideAndSeekState;
 }
