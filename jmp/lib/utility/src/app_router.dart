@@ -8,6 +8,7 @@ import 'package:deep_link_repository/deep_link_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:jmp/feature/feature.dart';
 import 'package:mankeli_core/mankeli_core.dart';
+import 'package:model/model.dart';
 import 'package:notification_repository/notification_repository.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:permission_repository/permission_repository.dart';
@@ -101,6 +102,9 @@ class AppRouter extends _$AppRouter {
                 AutoRoute(
                   page: GameDetailsRoute.page,
                 ),
+                AutoRoute(
+                  page: JoinGameRoute.page,
+                ),
               ],
             ),
             AutoRoute(
@@ -139,28 +143,22 @@ class AppRouterObserver extends AutoRouterObserver {
 
   /// Called when the current route has been pushed.
   @override
-  void didPush(Route<dynamic> route, Route<dynamic>? previousRoute) =>
-      _logRouteChange(route.settings.name);
+  void didPush(Route<dynamic> route, Route<dynamic>? previousRoute) => _logRouteChange(route.settings.name);
 
   @override
-  void didPop(Route<dynamic> route, Route<dynamic>? previousRoute) =>
-      _logRouteChange(route.settings.name);
+  void didPop(Route<dynamic> route, Route<dynamic>? previousRoute) => _logRouteChange(route.settings.name);
 
   @override
-  void didReplace({Route<dynamic>? newRoute, Route<dynamic>? oldRoute}) =>
-      _logRouteChange(newRoute?.settings.name);
+  void didReplace({Route<dynamic>? newRoute, Route<dynamic>? oldRoute}) => _logRouteChange(newRoute?.settings.name);
 
   @override
-  void didRemove(Route<dynamic> route, Route<dynamic>? previousRoute) =>
-      _logRouteChange(route.settings.name);
+  void didRemove(Route<dynamic> route, Route<dynamic>? previousRoute) => _logRouteChange(route.settings.name);
 
   @override
-  void didInitTabRoute(TabPageRoute route, TabPageRoute? previousRoute) =>
-      _logRouteChange(route.name);
+  void didInitTabRoute(TabPageRoute route, TabPageRoute? previousRoute) => _logRouteChange(route.name);
 
   @override
-  void didChangeTabRoute(TabPageRoute route, TabPageRoute previousRoute) =>
-      _logRouteChange(route.name);
+  void didChangeTabRoute(TabPageRoute route, TabPageRoute previousRoute) => _logRouteChange(route.name);
 }
 
 /// {@template permisson_guard}

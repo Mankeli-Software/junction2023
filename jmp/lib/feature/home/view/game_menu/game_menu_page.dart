@@ -15,7 +15,10 @@ class GameMenuPage extends StatelessWidget {
     return Scaffold(
       body: BlocProvider<GameMenuCubit>(
         create: (_) => GameMenuCubit()..initialize(),
-        child: const GameMenuView(),
+        child: const SafeArea(
+          bottom: false,
+          child: GameMenuView(),
+        ),
       ),
     );
   }
