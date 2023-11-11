@@ -23,6 +23,10 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = context.theme;
+    final selectedColor = theme.primaryColor;
+    final unselectedColor = theme.onBackgroundColor.withOpacity(0.9);
+
     return BlocConsumer<HomeCubit, HomeState>(
       listenWhen: (s1, s2) => true,
       listener: (context, state) {
@@ -33,7 +37,13 @@ class HomeView extends StatelessWidget {
         if (isTest) return const Placeholder();
 
         return Scaffold(
+          extendBody: true,
           bottomNavigationBar: DotNavigationBar(
+            selectedItemColor: selectedColor,
+            unselectedItemColor: unselectedColor,
+            backgroundColor: theme.backgroundColor,
+            dotIndicatorColor: Colors.transparent,
+            enablePaddingAnimation: false,
             currentIndex: _pages.indexOf(state.currentRoute),
             onTap: (index) {
               context.read<HomeCubit>().setRoute(_pages[index]);
