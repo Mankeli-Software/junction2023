@@ -7,8 +7,9 @@ export default function Features() {
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
             <h2 className="h2 mb-4">Digital games are played by over 80% of Finns.</h2>
-            <p className="text-xl text-gray-400"><a className="underline" href="https://trepo.tuni.fi/handle/10024/144376">The Finnish Player Barometer</a> highlights Finnish gaming habits and to condense, we like to game.</p>
+            <p className="text-xl text-gray-400"><a className="underline" href="https://trepo.tuni.fi/handle/10024/144376">The Finnish Player Barometer</a> highlights Finnish gaming habits and well, we like to game.</p>
           </div>
+          
 
           {/* Items */}
           <div className="max-w-sm mx-auto grid gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-16 items-start md:max-w-2xl lg:max-w-none" data-aos-id-blocks>
