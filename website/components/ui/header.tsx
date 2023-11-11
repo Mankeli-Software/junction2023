@@ -9,7 +9,7 @@ export default function Header() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-20">
           {/* Site branding */}
-          <div className="shrink-0 mr-4">
+          <div className="shrink-0 mr-4 mb-1">
             {/* Logo */}
             <Link href="/" className="block" aria-label="Cruip">
               <Image className="rounded-full" src={JmpLogoRound} width={48} height={48} alt="Testimonial 01" />
