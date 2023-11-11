@@ -48,5 +48,8 @@ add:
     - mason upgrade --global
     - mason make mhs_flutter_subfeature --on-conflict append
 
+xcode:
+  - open ios/Runner.xcworkspace
+
 
   

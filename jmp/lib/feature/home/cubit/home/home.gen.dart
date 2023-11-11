@@ -17,7 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$HomeState {
   HomeStatus get status => throw _privateConstructorUsedError;
-  PageRouteInfo get currentRoute => throw _privateConstructorUsedError;
+  PageRouteInfo<dynamic> get currentRoute => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $HomeStateCopyWith<HomeState> get copyWith =>
@@ -29,7 +29,7 @@ abstract class $HomeStateCopyWith<$Res> {
   factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
       _$HomeStateCopyWithImpl<$Res, HomeState>;
   @useResult
-  $Res call({HomeStatus status, PageRouteInfo currentRoute});
+  $Res call({HomeStatus status, PageRouteInfo<dynamic> currentRoute});
 }
 
 /// @nodoc
@@ -46,17 +46,17 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
   @override
   $Res call({
     Object? status = null,
-    Object? currentRoute = freezed,
+    Object? currentRoute = null,
   }) {
     return _then(_value.copyWith(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as HomeStatus,
-      currentRoute: freezed == currentRoute
+      currentRoute: null == currentRoute
           ? _value.currentRoute
           : currentRoute // ignore: cast_nullable_to_non_nullable
-              as PageRouteInfo,
+              as PageRouteInfo<dynamic>,
     ) as $Val);
   }
 }
@@ -69,7 +69,7 @@ abstract class _$$HomeStateImplCopyWith<$Res>
       __$$HomeStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({HomeStatus status, PageRouteInfo currentRoute});
+  $Res call({HomeStatus status, PageRouteInfo<dynamic> currentRoute});
 }
 
 /// @nodoc
@@ -84,17 +84,17 @@ class __$$HomeStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? status = null,
-    Object? currentRoute = freezed,
+    Object? currentRoute = null,
   }) {
     return _then(_$HomeStateImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as HomeStatus,
-      currentRoute: freezed == currentRoute
+      currentRoute: null == currentRoute
           ? _value.currentRoute
           : currentRoute // ignore: cast_nullable_to_non_nullable
-              as PageRouteInfo,
+              as PageRouteInfo<dynamic>,
     ));
   }
 }
@@ -111,7 +111,7 @@ class _$HomeStateImpl implements _HomeState {
   final HomeStatus status;
   @override
   @JsonKey()
-  final PageRouteInfo currentRoute;
+  final PageRouteInfo<dynamic> currentRoute;
 
   @override
   String toString() {
@@ -124,13 +124,12 @@ class _$HomeStateImpl implements _HomeState {
         (other.runtimeType == runtimeType &&
             other is _$HomeStateImpl &&
             (identical(other.status, status) || other.status == status) &&
-            const DeepCollectionEquality()
-                .equals(other.currentRoute, currentRoute));
+            (identical(other.currentRoute, currentRoute) ||
+                other.currentRoute == currentRoute));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, status, const DeepCollectionEquality().hash(currentRoute));
+  int get hashCode => Object.hash(runtimeType, status, currentRoute);
 
   @JsonKey(ignore: true)
   @override
@@ -142,12 +141,12 @@ class _$HomeStateImpl implements _HomeState {
 abstract class _HomeState implements HomeState {
   const factory _HomeState(
       {final HomeStatus status,
-      final PageRouteInfo currentRoute}) = _$HomeStateImpl;
+      final PageRouteInfo<dynamic> currentRoute}) = _$HomeStateImpl;
 
   @override
   HomeStatus get status;
   @override
-  PageRouteInfo get currentRoute;
+  PageRouteInfo<dynamic> get currentRoute;
   @override
   @JsonKey(ignore: true)
   _$$HomeStateImplCopyWith<_$HomeStateImpl> get copyWith =>

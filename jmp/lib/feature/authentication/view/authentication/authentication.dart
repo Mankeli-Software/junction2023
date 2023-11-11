@@ -9,7 +9,7 @@ import 'package:jmp/feature/authentication/cubit/authentication/authentication.d
 import 'package:jmp/utility/utility.dart';
 import 'package:jmp/widget/widget.dart';
 
-part 'authenticated_route_wrapper.dart';
+part 'authenticated_route_wrapper_page.dart';
 part 'authentication_form.dart';
 part 'authentication_page.dart';
 part 'email_view.dart';

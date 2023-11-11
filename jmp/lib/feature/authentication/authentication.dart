@@ -1,1 +1,2 @@
-export 'view/authentication/authentication.dart' show AuthenticationPage;
+export 'view/authentication/authentication.dart'
+    show AuthenticationPage, AuthenticatedRouteWrapperPage;

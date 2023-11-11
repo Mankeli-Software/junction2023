@@ -73,7 +73,7 @@ class AppRouter extends _$AppRouter {
           path: '/',
           children: [
             AutoRoute(
-              page: AuthenticatedRouteWrapper.page,
+              page: AuthenticatedRouteWrapperRoute.page,
               children: [
                 AutoRoute(
                   page: HomeRoute.page,

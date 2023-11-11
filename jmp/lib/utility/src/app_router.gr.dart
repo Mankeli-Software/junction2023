@@ -90,10 +90,10 @@ abstract class _$AppRouter extends RootStackRouter {
         ),
       );
     },
-    AuthenticatedRouteWrapper.name: (routeData) {
+    AuthenticatedRouteWrapperRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const AuthenticatedRouteWrapper(),
+        child: const AuthenticatedRouteWrapperPage(),
       );
     },
     AuthenticationRoute.name: (routeData) {
@@ -321,15 +321,15 @@ class PermissionRouteArgs {
 }
 
 /// generated route for
-/// [AuthenticatedRouteWrapper]
-class AuthenticatedRouteWrapper extends PageRouteInfo<void> {
-  const AuthenticatedRouteWrapper({List<PageRouteInfo>? children})
+/// [AuthenticatedRouteWrapperPage]
+class AuthenticatedRouteWrapperRoute extends PageRouteInfo<void> {
+  const AuthenticatedRouteWrapperRoute({List<PageRouteInfo>? children})
       : super(
-          AuthenticatedRouteWrapper.name,
+          AuthenticatedRouteWrapperRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'AuthenticatedRouteWrapper';
+  static const String name = 'AuthenticatedRouteWrapperRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

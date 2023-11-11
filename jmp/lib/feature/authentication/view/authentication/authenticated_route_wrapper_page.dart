@@ -5,9 +5,9 @@ part of 'authentication.dart';
 /// is responsible wrapping all the authenticated routes with a non-declarative router
 /// {@endtemplate}
 @RoutePage()
-class AuthenticatedRouteWrapper extends StatelessWidget {
+class AuthenticatedRouteWrapperPage extends StatelessWidget {
   /// {@macro authenticated_route_wrapper}
-  const AuthenticatedRouteWrapper({
+  const AuthenticatedRouteWrapperPage({
     super.key,
   });
 
