@@ -131,7 +131,7 @@ class GameDetailsView extends StatelessWidget {
                               ),
                               TextButton(
                                 onPressed: () => router.push(
-                                  const JoinGameRoute(),
+                                  JoinGameRoute(details: game),
                                 ),
                                 child: Text(
                                   'Join Game',

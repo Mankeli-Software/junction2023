@@ -5,7 +5,13 @@ part of 'join_game.dart';
 /// {@endtemplate}
 class JoinGameView extends StatelessWidget {
   /// {@macro join_game_view}
-  const JoinGameView({super.key});
+  const JoinGameView({
+    super.key,
+    required this.details,
+  });
+
+  ///
+  final GameDetails details;
 
   @override
   Widget build(BuildContext context) {
@@ -69,8 +75,7 @@ class JoinGameView extends StatelessWidget {
                 ),
                 const Spacer(),
                 Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
                   child: LinearProgressIndicator(
                     minHeight: 20,
                     backgroundColor: theme.primaryColor.withOpacity(0.4),
@@ -103,7 +108,7 @@ class JoinGameView extends StatelessWidget {
                   const Spacer(),
                   TextButton(
                     onPressed: () {
-                      context.router.push(const HideAndSeekRoute());
+                      context.router.push(HideAndSeekRoute(details: details));
                     },
                     child: Container(
                       padding: const EdgeInsets.symmetric(
@@ -112,8 +117,7 @@ class JoinGameView extends StatelessWidget {
                       ),
                       decoration: BoxDecoration(
                         color: theme.primaryColor,
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(40)),
+                        borderRadius: const BorderRadius.all(Radius.circular(40)),
                       ),
                       child: Text(
                         'Join Game',

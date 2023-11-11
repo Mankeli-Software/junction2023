@@ -8,6 +8,7 @@ import 'package:jmp/extension/extension.dart';
 import 'package:jmp/feature/game/cubit/join_game/join_game.dart';
 import 'package:jmp/utility/utility.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
+import 'package:model/model.dart';
 
 part 'join_game_page.dart';
 part 'join_game_view.dart';

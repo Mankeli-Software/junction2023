@@ -72,15 +72,23 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
     JoinGameRoute.name: (routeData) {
+      final args = routeData.argsAs<JoinGameRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const JoinGamePage(),
+        child: JoinGamePage(
+          key: args.key,
+          details: args.details,
+        ),
       );
     },
     HideAndSeekRoute.name: (routeData) {
+      final args = routeData.argsAs<HideAndSeekRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const HideAndSeekPage(),
+        child: HideAndSeekPage(
+          key: args.key,
+          details: args.details,
+        ),
       );
     },
     ActionGameRoute.name: (routeData) {
@@ -297,30 +305,78 @@ class GameDetailsRouteArgs {
 
 /// generated route for
 /// [JoinGamePage]
-class JoinGameRoute extends PageRouteInfo<void> {
-  const JoinGameRoute({List<PageRouteInfo>? children})
-      : super(
+class JoinGameRoute extends PageRouteInfo<JoinGameRouteArgs> {
+  JoinGameRoute({
+    Key? key,
+    required GameDetails details,
+    List<PageRouteInfo>? children,
+  }) : super(
           JoinGameRoute.name,
+          args: JoinGameRouteArgs(
+            key: key,
+            details: details,
+          ),
           initialChildren: children,
         );
 
   static const String name = 'JoinGameRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const PageInfo<JoinGameRouteArgs> page =
+      PageInfo<JoinGameRouteArgs>(name);
+}
+
+class JoinGameRouteArgs {
+  const JoinGameRouteArgs({
+    this.key,
+    required this.details,
+  });
+
+  final Key? key;
+
+  final GameDetails details;
+
+  @override
+  String toString() {
+    return 'JoinGameRouteArgs{key: $key, details: $details}';
+  }
 }
 
 /// generated route for
 /// [HideAndSeekPage]
-class HideAndSeekRoute extends PageRouteInfo<void> {
-  const HideAndSeekRoute({List<PageRouteInfo>? children})
-      : super(
+class HideAndSeekRoute extends PageRouteInfo<HideAndSeekRouteArgs> {
+  HideAndSeekRoute({
+    Key? key,
+    required GameDetails details,
+    List<PageRouteInfo>? children,
+  }) : super(
           HideAndSeekRoute.name,
+          args: HideAndSeekRouteArgs(
+            key: key,
+            details: details,
+          ),
           initialChildren: children,
         );
 
   static const String name = 'HideAndSeekRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const PageInfo<HideAndSeekRouteArgs> page =
+      PageInfo<HideAndSeekRouteArgs>(name);
+}
+
+class HideAndSeekRouteArgs {
+  const HideAndSeekRouteArgs({
+    this.key,
+    required this.details,
+  });
+
+  final Key? key;
+
+  final GameDetails details;
+
+  @override
+  String toString() {
+    return 'HideAndSeekRouteArgs{key: $key, details: $details}';
+  }
 }
 
 /// generated route for

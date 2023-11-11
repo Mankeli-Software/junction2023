@@ -8,7 +8,13 @@ part of 'join_game.dart';
 @RoutePage()
 class JoinGamePage extends StatelessWidget {
   /// {@macro join_game_page}
-  const JoinGamePage({super.key});
+  const JoinGamePage({
+    super.key,
+    required this.details,
+  });
+
+  ///
+  final GameDetails details;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +24,7 @@ class JoinGamePage extends StatelessWidget {
       ),
       body: BlocProvider<JoinGameCubit>(
         create: (_) => JoinGameCubit()..initialize(),
-        child: const JoinGameView(),
+        child: JoinGameView(details: details),
       ),
     );
   }
