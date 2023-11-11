@@ -15,6 +15,9 @@ export default function Header() {
               <Image className="rounded-full" src={JmpLogoRound} width={48} height={48} alt="Testimonial 01" />
             </Link>
           </div>
+          <div className="shrink-0 mr-4">
+            <p className="flex justify-end font-bold italic">J-mp</p>
+          </div>
 
           {/* Desktop navigation */}
           <nav className="hidden md:flex md:grow">
