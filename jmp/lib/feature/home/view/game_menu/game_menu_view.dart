@@ -203,7 +203,10 @@ class GameMenuView extends StatelessWidget {
                                     ),
                                   ),
                                   const Spacer(flex: 2),
-                                  const FaIcon(FontAwesomeIcons.chevronRight),
+                                  FaIcon(
+                                    FontAwesomeIcons.chevronRight,
+                                    color: theme.primaryColor,
+                                  ),
                                 ],
                               ),
                             ),
