@@ -15,7 +15,7 @@ class ActionGameCubit extends Cubit<ActionGameState> {
 
   StreamSubscription<AccelerometerEvent>? _accelerometerSubscription;
 
-  static const _treshold = 50.0;
+  static const _treshold = 30.0;
 
   /// Initializes the [ActionGameCubit] by:
   /// x, y and z
@@ -49,9 +49,7 @@ class ActionGameCubit extends Cubit<ActionGameState> {
               newProgress,
               state.requiredProgress,
             ),
-            status: newProgress >= state.requiredProgress
-                ? ActionGameStatus.success
-                : ActionGameStatus.idle,
+            status: newProgress >= state.requiredProgress ? ActionGameStatus.success : ActionGameStatus.idle,
           ),
         );
       }

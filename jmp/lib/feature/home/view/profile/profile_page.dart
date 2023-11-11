@@ -15,7 +15,7 @@ class ProfilePage extends StatelessWidget {
     return Scaffold(
       body: BlocProvider<ProfileCubit>(
         create: (_) => ProfileCubit()..initialize(),
-        child: const ProfileView(),
+        child: const SafeArea(child: ProfileView()),
       ),
     );
   }
