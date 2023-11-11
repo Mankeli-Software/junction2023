@@ -37,7 +37,7 @@ module.exports = {
         '1/1': '100%',
       },
       fontFamily: {
-        inter: ['var(--font-inter)', 'sans-serif'],
+        'hanken-grotesk': ['var(--font-hanken-grotesk)', 'sans-serif'],
         'architects-daughter': ['var(--font-architects-daughter)', 'sans-serif']
       },
       fontSize: {

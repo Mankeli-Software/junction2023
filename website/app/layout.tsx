@@ -1,14 +1,8 @@
 import './css/style.css'
 
-import { Inter, Architects_Daughter, Hanken_Grotesk } from 'next/font/google'
+import { Architects_Daughter, Hanken_Grotesk } from 'next/font/google'
 
 import Header from '@/components/ui/header'
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap'
-})
 
 const hanken_grotesk = Hanken_Grotesk({
   subsets: ['latin'],
@@ -36,7 +30,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${hanken_grotesk.variable} ${architects_daughter.variable} font-hanken-grotesk antialiased bg-gray-900 text-gray-200 tracking-tight`}>
+      <body className={`${hanken_grotesk.variable} font-hanken-grotesk antialiased bg-gray-900 text-gray-200 tracking-tight`}>
         <div className="flex flex-col min-h-screen overflow-hidden">
           <Header />
           {children}
