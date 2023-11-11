@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import NewChallenge from './new-challenge'
 import JmpLogoRound from '@/public/images/j-mp_icon_noBG.png'
 
 export default function WebpanelHeader() {
@@ -23,9 +24,7 @@ export default function WebpanelHeader() {
             {/* Desktop sign in links */}
             <ul className="flex grow justify-end flex-wrap items-center">
               <li>
-                <Link href="/webpanel" className="btn-sm text-white ml-1 bg-purple-600 hover:bg-purple-500">
-                  Create Challenge
-                </Link>
+                <NewChallenge />
               </li>
               <li>
                 <div className="border-solid border-2 border-white-500 hover:border-gray-400 ml-3">
