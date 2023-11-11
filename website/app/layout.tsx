@@ -2,8 +2,6 @@ import './css/style.css'
 
 import { Architects_Daughter, Hanken_Grotesk } from 'next/font/google'
 
-import Header from '@/components/ui/header'
-
 const hanken_grotesk = Hanken_Grotesk({
   subsets: ['latin'],
   variable: '--font-hanken-grotesk',
@@ -32,7 +30,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${hanken_grotesk.variable} font-hanken-grotesk antialiased bg-gray-900 text-gray-200 tracking-tight`}>
         <div className="flex flex-col min-h-screen overflow-hidden">
-          <Header />
           {children}
         </div>
       </body>
