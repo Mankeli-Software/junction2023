@@ -54,7 +54,7 @@ android {
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "co.mankeli.jmp"
-        minSdkVersion flutter.minSdkVersion
+        minSdkVersion 19 // TODO(Juho): Does this break something? flutter.minSdkVersion
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
