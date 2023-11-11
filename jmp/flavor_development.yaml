@@ -38,7 +38,7 @@ flutter_native_splash:
   web: false
   android_12:
     image: asset/app/development/icon_foreground.png
-    branding: asset/app/development/branding.png
+    # branding: asset/app/development/branding.png
     icon_background_color: "#ffffff"
     color: "#ffffff"
     icon_background_color_dark: "#000000"
