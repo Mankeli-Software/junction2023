@@ -39,6 +39,13 @@ class HomeView extends StatelessWidget {
         return Scaffold(
           extendBody: true,
           bottomNavigationBar: DotNavigationBar(
+            boxShadow: [
+              BoxShadow(
+                color: theme.textColor.withOpacity(0.2),
+                blurRadius: 7,
+                offset: const Offset(0, 4),
+              ),
+            ],
             selectedItemColor: selectedColor,
             unselectedItemColor: unselectedColor,
             backgroundColor: theme.backgroundColor,
