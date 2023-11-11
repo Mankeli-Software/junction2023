@@ -8,14 +8,30 @@ part of 'action_game.dart';
 @RoutePage()
 class ActionGamePage extends StatelessWidget {
   /// {@macro action_game_page}
-  const ActionGamePage({super.key});
+  const ActionGamePage({
+    super.key,
+    required this.title,
+    required this.description,
+    required this.imageUrl,
+  });
+
+  /// The title of the minigame
+  final String title;
+
+  /// The description / instructions of the minigame
+  final String description;
+
+  /// The image of the minigame
+  final String imageUrl;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: BlocProvider<ActionGameCubit>(
-        create: (_) => ActionGameCubit()..initialize(),
-        child: const ActionGameView(),
+    return BlocProvider<ActionGameCubit>(
+      create: (_) => ActionGameCubit()..initialize(),
+      child: ActionGameView(
+        title: title,
+        description: description,
+        imageUrl: imageUrl,
       ),
     );
   }

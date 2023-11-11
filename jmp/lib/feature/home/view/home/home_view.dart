@@ -16,8 +16,8 @@ class HomeView extends StatelessWidget {
   final bool isTest;
 
   static const _pages = [
-    GameMenuRoute(),
     MenuRoute(),
+    GameMenuRoute(),
     ProfileRoute(),
   ];
 

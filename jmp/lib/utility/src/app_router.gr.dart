@@ -74,9 +74,15 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
     ActionGameRoute.name: (routeData) {
+      final args = routeData.argsAs<ActionGameRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const ActionGamePage(),
+        child: ActionGamePage(
+          key: args.key,
+          title: args.title,
+          description: args.description,
+          imageUrl: args.imageUrl,
+        ),
       );
     },
     BalanceGameRoute.name: (routeData) {
@@ -271,16 +277,50 @@ class HideAndSeekRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [ActionGamePage]
-class ActionGameRoute extends PageRouteInfo<void> {
-  const ActionGameRoute({List<PageRouteInfo>? children})
-      : super(
+class ActionGameRoute extends PageRouteInfo<ActionGameRouteArgs> {
+  ActionGameRoute({
+    Key? key,
+    required String title,
+    required String description,
+    required String imageUrl,
+    List<PageRouteInfo>? children,
+  }) : super(
           ActionGameRoute.name,
+          args: ActionGameRouteArgs(
+            key: key,
+            title: title,
+            description: description,
+            imageUrl: imageUrl,
+          ),
           initialChildren: children,
         );
 
   static const String name = 'ActionGameRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const PageInfo<ActionGameRouteArgs> page =
+      PageInfo<ActionGameRouteArgs>(name);
+}
+
+class ActionGameRouteArgs {
+  const ActionGameRouteArgs({
+    this.key,
+    required this.title,
+    required this.description,
+    required this.imageUrl,
+  });
+
+  final Key? key;
+
+  final String title;
+
+  final String description;
+
+  final String imageUrl;
+
+  @override
+  String toString() {
+    return 'ActionGameRouteArgs{key: $key, title: $title, description: $description, imageUrl: $imageUrl}';
+  }
 }
 
 /// generated route for

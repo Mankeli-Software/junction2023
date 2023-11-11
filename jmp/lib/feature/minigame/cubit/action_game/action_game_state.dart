@@ -7,8 +7,10 @@ part of 'action_game.dart';
 class ActionGameState with _$ActionGameState {
   /// {@macro action_game_state}
   const factory ActionGameState({
-    @Default(ActionGameStatus.initializing)
-        ActionGameStatus status,
+    @Default(ActionGameStatus.initializing) ActionGameStatus status,
+    @Default(1) int currentProgress,
+    @Default(10) int requiredProgress,
+    @Default(Duration(minutes: 1)) Duration timeLeft,
   }) = _ActionGameState;
 }
 
