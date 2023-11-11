@@ -22,4 +22,13 @@ class HomeCubit extends Cubit<HomeState> {
       ),
     );
   }
+
+  /// Sets the current route
+  void setRoute(PageRouteInfo route) {
+    emit(
+      state.copyWith(
+        currentRoute: route,
+      ),
+    );
+  }
 }

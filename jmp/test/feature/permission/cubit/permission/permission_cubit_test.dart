@@ -1,6 +1,6 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:j_mp/feature/permission/cubit/permission/permission.dart';
+import 'package:jmp/feature/permission/cubit/permission/permission.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:permission_handler/permission_handler.dart';
 

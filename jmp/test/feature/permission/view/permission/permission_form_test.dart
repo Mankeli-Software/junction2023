@@ -2,9 +2,9 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:j_mp/feature/app/app.dart';
-import 'package:j_mp/feature/permission/cubit/permission/permission.dart';
-import 'package:j_mp/feature/permission/view/permission/permission.dart';
+import 'package:jmp/feature/app/app.dart';
+import 'package:jmp/feature/permission/cubit/permission/permission.dart';
+import 'package:jmp/feature/permission/view/permission/permission.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:permission_handler/permission_handler.dart';
 

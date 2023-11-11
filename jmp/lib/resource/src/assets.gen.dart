@@ -39,6 +39,9 @@ class $AssetSvgGen {
 class $AssetAppDevelopmentGen {
   const $AssetAppDevelopmentGen();
 
+  /// File path: asset/app/development/branding.png
+  AssetGenImage get branding => const AssetGenImage('asset/app/development/branding.png');
+
   /// File path: asset/app/development/icon.png
   AssetGenImage get icon => const AssetGenImage('asset/app/development/icon.png');
 
@@ -47,9 +50,6 @@ class $AssetAppDevelopmentGen {
 
   /// File path: asset/app/development/icon_foreground.png
   AssetGenImage get iconForeground => const AssetGenImage('asset/app/development/icon_foreground.png');
-
-  /// File path: asset/app/development/icon_monochrome.png
-  AssetGenImage get iconMonochrome => const AssetGenImage('asset/app/development/icon_monochrome.png');
 
   /// File path: asset/app/development/icon_round.png
   AssetGenImage get iconRound => const AssetGenImage('asset/app/development/icon_round.png');
@@ -65,11 +65,14 @@ class $AssetAppDevelopmentGen {
 
   /// List of all assets
   List<AssetGenImage> get values =>
-      [icon, iconBackground, iconForeground, iconMonochrome, iconRound, iconRounded, iconRoundedMonochrome, splashScreen];
+      [branding, icon, iconBackground, iconForeground, iconRound, iconRounded, iconRoundedMonochrome, splashScreen];
 }
 
 class $AssetAppProductionGen {
   const $AssetAppProductionGen();
+
+  /// File path: asset/app/production/branding.png
+  AssetGenImage get branding => const AssetGenImage('asset/app/production/branding.png');
 
   /// File path: asset/app/production/icon.png
   AssetGenImage get icon => const AssetGenImage('asset/app/production/icon.png');
@@ -79,9 +82,6 @@ class $AssetAppProductionGen {
 
   /// File path: asset/app/production/icon_foreground.png
   AssetGenImage get iconForeground => const AssetGenImage('asset/app/production/icon_foreground.png');
-
-  /// File path: asset/app/production/icon_monochrome.png
-  AssetGenImage get iconMonochrome => const AssetGenImage('asset/app/production/icon_monochrome.png');
 
   /// File path: asset/app/production/icon_round.png
   AssetGenImage get iconRound => const AssetGenImage('asset/app/production/icon_round.png');
@@ -97,11 +97,14 @@ class $AssetAppProductionGen {
 
   /// List of all assets
   List<AssetGenImage> get values =>
-      [icon, iconBackground, iconForeground, iconMonochrome, iconRound, iconRounded, iconRoundedMonochrome, splashScreen];
+      [branding, icon, iconBackground, iconForeground, iconRound, iconRounded, iconRoundedMonochrome, splashScreen];
 }
 
 class $AssetAppStagingGen {
   const $AssetAppStagingGen();
+
+  /// File path: asset/app/staging/branding.png
+  AssetGenImage get branding => const AssetGenImage('asset/app/staging/branding.png');
 
   /// File path: asset/app/staging/icon.png
   AssetGenImage get icon => const AssetGenImage('asset/app/staging/icon.png');
@@ -111,9 +114,6 @@ class $AssetAppStagingGen {
 
   /// File path: asset/app/staging/icon_foreground.png
   AssetGenImage get iconForeground => const AssetGenImage('asset/app/staging/icon_foreground.png');
-
-  /// File path: asset/app/staging/icon_monochrome.png
-  AssetGenImage get iconMonochrome => const AssetGenImage('asset/app/staging/icon_monochrome.png');
 
   /// File path: asset/app/staging/icon_round.png
   AssetGenImage get iconRound => const AssetGenImage('asset/app/staging/icon_round.png');
@@ -129,7 +129,7 @@ class $AssetAppStagingGen {
 
   /// List of all assets
   List<AssetGenImage> get values =>
-      [icon, iconBackground, iconForeground, iconMonochrome, iconRound, iconRounded, iconRoundedMonochrome, splashScreen];
+      [branding, icon, iconBackground, iconForeground, iconRound, iconRounded, iconRoundedMonochrome, splashScreen];
 }
 
 class $AssetFontMontserratGen {
@@ -366,7 +366,16 @@ class AssetGenImage {
     );
   }
 
-  ImageProvider provider() => AssetImage(_assetName);
+  ImageProvider provider({
+    AssetBundle? bundle,
+    String? package,
+  }) {
+    return AssetImage(
+      _assetName,
+      bundle: bundle,
+      package: package,
+    );
+  }
 
   String get path => _assetName;
 
@@ -393,9 +402,9 @@ class SvgGenImage {
     bool excludeFromSemantics = false,
     SvgTheme theme = const SvgTheme(),
     ColorFilter? colorFilter,
+    Clip clipBehavior = Clip.hardEdge,
     @deprecated Color? color,
     @deprecated BlendMode colorBlendMode = BlendMode.srcIn,
-    @deprecated Clip? clipBehavior,
     @deprecated bool cacheColorFilter = false,
   }) {
     return SvgPicture.asset(

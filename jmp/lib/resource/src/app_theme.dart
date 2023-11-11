@@ -265,31 +265,31 @@ class AppThemeLight extends AppTheme {
   Brightness get brightness => Brightness.light;
 
   @override
-  Color get primaryColor => const Color(0xFFFECD33);
+  Color get primaryColor => const Color(0xFF00677C);
 
   @override
-  Color get onPrimaryColor => const Color(0xFF362D2D);
+  Color get onPrimaryColor => const Color(0xFFFFFFFF);
 
   @override
-  Color get secondaryColor => const Color(0xFF601C1C);
+  Color get secondaryColor => const Color(0xFF006E27);
 
   @override
-  Color get onSecondaryColor => const Color(0xFF0E2471);
+  Color get onSecondaryColor => const Color(0xFFFFFFFF);
 
   @override
-  Color get backgroundColor => const Color(0xFFFFFFFF);
+  Color get backgroundColor => const Color(0xFFFBFCFE);
 
   @override
-  Color get onBackgroundColor => const Color(0xFFEEEEEE);
+  Color get onBackgroundColor => const Color(0xFF191C1D);
 
   @override
-  Color get containerColor => const Color(0xFFC6C6C6);
+  Color get containerColor => const Color(0xFFB1ECFF);
 
   @override
-  Color get onContainerColor => const Color(0xFF0F0F0F);
+  Color get onContainerColor => const Color(0xFF001F27);
 
   @override
-  Color get textColor => const Color(0xFF0F0F0F);
+  Color get textColor => const Color(0xFF191C1D);
 
   @override
   Color get errorColor => const Color(0xFFAA2828);
@@ -306,31 +306,31 @@ class AppThemeDark extends AppTheme {
   Brightness get brightness => Brightness.dark;
 
   @override
-  Color get primaryColor => const Color(0xFFFECD33);
+  Color get primaryColor => const Color(0xFF33D7FE);
 
   @override
-  Color get onPrimaryColor => const Color(0xFF362D2D);
+  Color get onPrimaryColor => const Color(0xFF003642);
 
   @override
-  Color get secondaryColor => const Color(0xFF601C1C);
+  Color get secondaryColor => const Color(0xFF64DF76);
 
   @override
-  Color get onSecondaryColor => const Color(0xFF0E2471);
+  Color get onSecondaryColor => const Color(0xFF003911);
 
   @override
-  Color get backgroundColor => const Color(0xFF000000);
+  Color get backgroundColor => const Color(0xFF191C1D);
 
   @override
-  Color get onBackgroundColor => const Color(0xFF111111);
+  Color get onBackgroundColor => const Color(0xFFE1E3E4);
 
   @override
-  Color get containerColor => const Color(0xFF181818);
+  Color get containerColor => const Color(0xFF004E5E);
 
   @override
-  Color get onContainerColor => const Color(0xFFEBEBEB);
+  Color get onContainerColor => const Color(0xFFB1ECFF);
 
   @override
-  Color get textColor => const Color(0xFFEBEBEB);
+  Color get textColor => const Color(0xFFE1E3E4);
 
   @override
   Color get errorColor => const Color(0xFFAA2828);

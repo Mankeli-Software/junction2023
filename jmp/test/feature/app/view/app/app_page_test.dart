@@ -1,6 +1,6 @@
 import 'package:deep_link_repository/deep_link_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:j_mp/feature/app/view/app/app.dart';
+import 'package:jmp/feature/app/view/app/app.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:model/model.dart';
 import 'package:notification_repository/notification_repository.dart';

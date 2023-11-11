@@ -6,8 +6,8 @@ import 'package:cloud_function_repository/cloud_function_repository.dart';
 import 'package:database_repository/database_repository.dart';
 import 'package:deep_link_repository/deep_link_repository.dart';
 import 'package:flutter/material.dart';
+import 'package:jmp/feature/feature.dart';
 import 'package:mankeli_core/mankeli_core.dart';
-import 'package:j_mp/feature/feature.dart';
 import 'package:notification_repository/notification_repository.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:permission_repository/permission_repository.dart';
@@ -23,63 +23,42 @@ class AppRouter extends _$AppRouter {
   /// {@macro app_router}
   AppRouter({
     required this.databaseRepository,
-
-    ////// 
     required this.analyticRepository,
-    ////// 
     required this.permissionRepository,
     required this.cacheRepository,
-    ////// 
     required this.cloudFunctionRepository,
-    ////// 
-    ////// 
     required this.storageRepository,
-    ////// 
-    ////// 
     required this.authenticationRepository,
-    ////// 
-    ////// 
     required this.notificationRepository,
-    ////// 
-    ////// 
     required this.deepLinkRepository,
-    ////// 
   }) : super();
 
   /// {@macro app_router}
   final DatabaseRepository databaseRepository;
 
-  ////// 
   /// {@macro app_router}
   final AnalyticRepository analyticRepository;
-  ////// 
 
   /// {@macro app_router}
   final PermissionRepository permissionRepository;
 
   /// {@macro app_router}
   final CacheRepository cacheRepository;
-  ////// 
+
   /// {@macro app_router}
   final CloudFunctionRepository cloudFunctionRepository;
-  ////// 
 
-  ////// 
   /// {@macro app_router}
   final StorageRepository storageRepository;
-  ////// 
-  ////// 
+
   /// {@macro app_router}
   final AuthenticationRepository authenticationRepository;
-  ////// 
-  ////// 
+
   /// {@macro app_router}
   final NotificationRepository notificationRepository;
-  ////// 
-  ////// 
+
   /// {@macro app_router}
   final DeepLinkRepository deepLinkRepository;
-  ////// 
 
   @override
   RouteType get defaultRouteType => const RouteType.adaptive();
@@ -94,13 +73,36 @@ class AppRouter extends _$AppRouter {
           path: '/',
           children: [
             AutoRoute(
-              page: HomeRoute.page,
+              page: AuthenticatedRouteWrapper.page,
+              children: [
+                AutoRoute(
+                  page: HomeRoute.page,
+                  children: [
+                    AutoRoute(
+                      page: GameMenuRoute.page,
+                    ),
+                    AutoRoute(
+                      page: ProfileRoute.page,
+                    ),
+                    AutoRoute(
+                      page: MenuRoute.page,
+                    ),
+                  ],
+                ),
+                AutoRoute(
+                  page: HideAndSeekRoute.page,
+                ),
+                AutoRoute(
+                  page: ActionGameRoute.page,
+                ),
+                AutoRoute(
+                  page: BalanceGameRoute.page,
+                ),
+              ],
             ),
-            ////// 
             AutoRoute(
               page: AuthenticationRoute.page,
             ),
-            ////// 
             AutoRoute(
               page: PermissionRoute.page,
             ),
@@ -117,24 +119,17 @@ class AppRouter extends _$AppRouter {
 /// {@endtemplate}
 class AppRouterObserver extends AutoRouterObserver {
   /// {@macro mankeli_route_observer}
-  AppRouterObserver(
-      ////// 
-      {
+  AppRouterObserver({
     required this.analyticRepository,
-  }
-      ////// 
-      );
+  });
 
-  ////// 
   /// The analytics repository for logging route changes
   final AnalyticRepository analyticRepository;
-  ////// 
 
   void _logRouteChange(String? routeName) {
     if (routeName == null) return;
-    ////// 
+
     analyticRepository.logRouteChange(routeName);
-    ////// 
 
     AppLogger.i('Route changed to $routeName ');
   }
@@ -195,7 +190,7 @@ class PermissionGuard extends AutoRouteGuard {
       await router.push(
         PermissionRoute(
           permissions: permissions,
-          onResult: (success) {
+          onResult: ({success = false}) {
             resolver.next(success);
             router.removeLast();
           },

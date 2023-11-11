@@ -90,11 +90,11 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "co.mankeli.jmp" "\0"
-            VALUE "FileDescription", "j_mp" "\0"
+            VALUE "FileDescription", "jmp" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "j_mp" "\0"
+            VALUE "InternalName", "jmp" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2022 co.mankeli.jmp. All rights reserved." "\0"
-            VALUE "OriginalFilename", "j_mp.exe" "\0"
+            VALUE "OriginalFilename", "jmp.exe" "\0"
             VALUE "ProductName", "J Mp" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END

@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:j_mp/resource/resource.dart';
+import 'package:jmp/resource/resource.dart';
 
 /// This class can be used to scale stuff to a width/height percentage of the screen
 /// or to scale font size according to the screen size.

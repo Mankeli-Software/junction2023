@@ -1,6 +1,6 @@
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:j_mp/widget/widget.dart';
+import 'package:jmp/widget/widget.dart';
 
 import '../test_helper.dart';
 

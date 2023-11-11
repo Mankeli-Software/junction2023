@@ -114,11 +114,11 @@ class _$AuthenticationStateCopyWithImpl<$Res, $Val extends AuthenticationState>
 }
 
 /// @nodoc
-abstract class _$$_AuthenticationStateCopyWith<$Res>
+abstract class _$$AuthenticationStateImplCopyWith<$Res>
     implements $AuthenticationStateCopyWith<$Res> {
-  factory _$$_AuthenticationStateCopyWith(_$_AuthenticationState value,
-          $Res Function(_$_AuthenticationState) then) =
-      __$$_AuthenticationStateCopyWithImpl<$Res>;
+  factory _$$AuthenticationStateImplCopyWith(_$AuthenticationStateImpl value,
+          $Res Function(_$AuthenticationStateImpl) then) =
+      __$$AuthenticationStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -132,11 +132,11 @@ abstract class _$$_AuthenticationStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_AuthenticationStateCopyWithImpl<$Res>
-    extends _$AuthenticationStateCopyWithImpl<$Res, _$_AuthenticationState>
-    implements _$$_AuthenticationStateCopyWith<$Res> {
-  __$$_AuthenticationStateCopyWithImpl(_$_AuthenticationState _value,
-      $Res Function(_$_AuthenticationState) _then)
+class __$$AuthenticationStateImplCopyWithImpl<$Res>
+    extends _$AuthenticationStateCopyWithImpl<$Res, _$AuthenticationStateImpl>
+    implements _$$AuthenticationStateImplCopyWith<$Res> {
+  __$$AuthenticationStateImplCopyWithImpl(_$AuthenticationStateImpl _value,
+      $Res Function(_$AuthenticationStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -150,7 +150,7 @@ class __$$_AuthenticationStateCopyWithImpl<$Res>
     Object? passwordResetStatus = null,
     Object? failureStatus = null,
   }) {
-    return _then(_$_AuthenticationState(
+    return _then(_$AuthenticationStateImpl(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -185,8 +185,8 @@ class __$$_AuthenticationStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_AuthenticationState implements _AuthenticationState {
-  const _$_AuthenticationState(
+class _$AuthenticationStateImpl implements _AuthenticationState {
+  const _$AuthenticationStateImpl(
       {this.type = AuthenticationType.unknown,
       this.email = const EmailFormz.pure(),
       this.password = const PasswordFormz.pure(),
@@ -239,7 +239,7 @@ class _$_AuthenticationState implements _AuthenticationState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AuthenticationState &&
+            other is _$AuthenticationStateImpl &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.password, password) ||
@@ -261,8 +261,8 @@ class _$_AuthenticationState implements _AuthenticationState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AuthenticationStateCopyWith<_$_AuthenticationState> get copyWith =>
-      __$$_AuthenticationStateCopyWithImpl<_$_AuthenticationState>(
+  _$$AuthenticationStateImplCopyWith<_$AuthenticationStateImpl> get copyWith =>
+      __$$AuthenticationStateImplCopyWithImpl<_$AuthenticationStateImpl>(
           this, _$identity);
 }
 
@@ -275,7 +275,7 @@ abstract class _AuthenticationState implements AuthenticationState {
           final FormzStatus passwordStatus,
           final FormzStatus passwordResetStatus,
           final AuthenticationFailureStatus failureStatus}) =
-      _$_AuthenticationState;
+      _$AuthenticationStateImpl;
 
   @override
 
@@ -307,6 +307,6 @@ abstract class _AuthenticationState implements AuthenticationState {
   AuthenticationFailureStatus get failureStatus;
   @override
   @JsonKey(ignore: true)
-  _$$_AuthenticationStateCopyWith<_$_AuthenticationState> get copyWith =>
+  _$$AuthenticationStateImplCopyWith<_$AuthenticationStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:j_mp/feature/app/view/app/app.dart';
-import 'package:j_mp/feature/feature.dart';
+import 'package:jmp/feature/app/view/app/app.dart';
+import 'package:jmp/feature/feature.dart';
 import 'package:mocktail/mocktail.dart';
 
 import '../../../../test_helper.dart';

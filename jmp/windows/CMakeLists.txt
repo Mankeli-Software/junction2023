@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(j_mp LANGUAGES CXX)
+project(jmp LANGUAGES CXX)
 
-set(BINARY_NAME "j_mp")
+set(BINARY_NAME "jmp")
 
 cmake_policy(SET CMP0063 NEW)
 

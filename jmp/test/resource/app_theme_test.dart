@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:j_mp/resource/resource.dart';
+import 'package:jmp/resource/resource.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();

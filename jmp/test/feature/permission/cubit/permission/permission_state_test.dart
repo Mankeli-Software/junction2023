@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_redundant_argument_values
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:j_mp/feature/permission/cubit/permission/permission.dart';
+import 'package:jmp/feature/permission/cubit/permission/permission.dart';
 
 void main() {
   group('PermissionState', () {

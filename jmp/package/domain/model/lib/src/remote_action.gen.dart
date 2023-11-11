@@ -89,20 +89,20 @@ class _$RemoteActionCopyWithImpl<$Res, $Val extends RemoteAction>
 }
 
 /// @nodoc
-abstract class _$$PushRouteActionCopyWith<$Res> {
-  factory _$$PushRouteActionCopyWith(
-          _$PushRouteAction value, $Res Function(_$PushRouteAction) then) =
-      __$$PushRouteActionCopyWithImpl<$Res>;
+abstract class _$$PushRouteActionImplCopyWith<$Res> {
+  factory _$$PushRouteActionImplCopyWith(_$PushRouteActionImpl value,
+          $Res Function(_$PushRouteActionImpl) then) =
+      __$$PushRouteActionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String routeName});
 }
 
 /// @nodoc
-class __$$PushRouteActionCopyWithImpl<$Res>
-    extends _$RemoteActionCopyWithImpl<$Res, _$PushRouteAction>
-    implements _$$PushRouteActionCopyWith<$Res> {
-  __$$PushRouteActionCopyWithImpl(
-      _$PushRouteAction _value, $Res Function(_$PushRouteAction) _then)
+class __$$PushRouteActionImplCopyWithImpl<$Res>
+    extends _$RemoteActionCopyWithImpl<$Res, _$PushRouteActionImpl>
+    implements _$$PushRouteActionImplCopyWith<$Res> {
+  __$$PushRouteActionImplCopyWithImpl(
+      _$PushRouteActionImpl _value, $Res Function(_$PushRouteActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -110,7 +110,7 @@ class __$$PushRouteActionCopyWithImpl<$Res>
   $Res call({
     Object? routeName = null,
   }) {
-    return _then(_$PushRouteAction(
+    return _then(_$PushRouteActionImpl(
       routeName: null == routeName
           ? _value.routeName
           : routeName // ignore: cast_nullable_to_non_nullable
@@ -121,13 +121,13 @@ class __$$PushRouteActionCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$PushRouteAction extends PushRouteAction {
-  const _$PushRouteAction({required this.routeName, final String? $type})
+class _$PushRouteActionImpl extends PushRouteAction {
+  const _$PushRouteActionImpl({required this.routeName, final String? $type})
       : $type = $type ?? 'pushRoute',
         super._();
 
-  factory _$PushRouteAction.fromJson(Map<String, dynamic> json) =>
-      _$$PushRouteActionFromJson(json);
+  factory _$PushRouteActionImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PushRouteActionImplFromJson(json);
 
   @override
   final String routeName;
@@ -144,7 +144,7 @@ class _$PushRouteAction extends PushRouteAction {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PushRouteAction &&
+            other is _$PushRouteActionImpl &&
             (identical(other.routeName, routeName) ||
                 other.routeName == routeName));
   }
@@ -156,8 +156,9 @@ class _$PushRouteAction extends PushRouteAction {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$PushRouteActionCopyWith<_$PushRouteAction> get copyWith =>
-      __$$PushRouteActionCopyWithImpl<_$PushRouteAction>(this, _$identity);
+  _$$PushRouteActionImplCopyWith<_$PushRouteActionImpl> get copyWith =>
+      __$$PushRouteActionImplCopyWithImpl<_$PushRouteActionImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -223,7 +224,7 @@ class _$PushRouteAction extends PushRouteAction {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$PushRouteActionToJson(
+    return _$$PushRouteActionImplToJson(
       this,
     );
   }
@@ -231,43 +232,43 @@ class _$PushRouteAction extends PushRouteAction {
 
 abstract class PushRouteAction extends RemoteAction {
   const factory PushRouteAction({required final String routeName}) =
-      _$PushRouteAction;
+      _$PushRouteActionImpl;
   const PushRouteAction._() : super._();
 
   factory PushRouteAction.fromJson(Map<String, dynamic> json) =
-      _$PushRouteAction.fromJson;
+      _$PushRouteActionImpl.fromJson;
 
   String get routeName;
   @JsonKey(ignore: true)
-  _$$PushRouteActionCopyWith<_$PushRouteAction> get copyWith =>
+  _$$PushRouteActionImplCopyWith<_$PushRouteActionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$InvalidRemoteActionCopyWith<$Res> {
-  factory _$$InvalidRemoteActionCopyWith(_$InvalidRemoteAction value,
-          $Res Function(_$InvalidRemoteAction) then) =
-      __$$InvalidRemoteActionCopyWithImpl<$Res>;
+abstract class _$$InvalidRemoteActionImplCopyWith<$Res> {
+  factory _$$InvalidRemoteActionImplCopyWith(_$InvalidRemoteActionImpl value,
+          $Res Function(_$InvalidRemoteActionImpl) then) =
+      __$$InvalidRemoteActionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$InvalidRemoteActionCopyWithImpl<$Res>
-    extends _$RemoteActionCopyWithImpl<$Res, _$InvalidRemoteAction>
-    implements _$$InvalidRemoteActionCopyWith<$Res> {
-  __$$InvalidRemoteActionCopyWithImpl(
-      _$InvalidRemoteAction _value, $Res Function(_$InvalidRemoteAction) _then)
+class __$$InvalidRemoteActionImplCopyWithImpl<$Res>
+    extends _$RemoteActionCopyWithImpl<$Res, _$InvalidRemoteActionImpl>
+    implements _$$InvalidRemoteActionImplCopyWith<$Res> {
+  __$$InvalidRemoteActionImplCopyWithImpl(_$InvalidRemoteActionImpl _value,
+      $Res Function(_$InvalidRemoteActionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$InvalidRemoteAction extends InvalidRemoteAction {
-  const _$InvalidRemoteAction({final String? $type})
+class _$InvalidRemoteActionImpl extends InvalidRemoteAction {
+  const _$InvalidRemoteActionImpl({final String? $type})
       : $type = $type ?? 'invalid',
         super._();
 
-  factory _$InvalidRemoteAction.fromJson(Map<String, dynamic> json) =>
-      _$$InvalidRemoteActionFromJson(json);
+  factory _$InvalidRemoteActionImpl.fromJson(Map<String, dynamic> json) =>
+      _$$InvalidRemoteActionImplFromJson(json);
 
   @JsonKey(name: 'runtimeType')
   final String $type;
@@ -280,7 +281,8 @@ class _$InvalidRemoteAction extends InvalidRemoteAction {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InvalidRemoteAction);
+        (other.runtimeType == runtimeType &&
+            other is _$InvalidRemoteActionImpl);
   }
 
   @JsonKey(ignore: true)
@@ -351,16 +353,16 @@ class _$InvalidRemoteAction extends InvalidRemoteAction {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$InvalidRemoteActionToJson(
+    return _$$InvalidRemoteActionImplToJson(
       this,
     );
   }
 }
 
 abstract class InvalidRemoteAction extends RemoteAction {
-  const factory InvalidRemoteAction() = _$InvalidRemoteAction;
+  const factory InvalidRemoteAction() = _$InvalidRemoteActionImpl;
   const InvalidRemoteAction._() : super._();
 
   factory InvalidRemoteAction.fromJson(Map<String, dynamic> json) =
-      _$InvalidRemoteAction.fromJson;
+      _$InvalidRemoteActionImpl.fromJson;
 }

@@ -26,6 +26,30 @@ abstract class _$AppRouter extends RootStackRouter {
         ),
       );
     },
+    GameMenuRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const GameMenuPage(),
+      );
+    },
+    ProfileRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ProfilePage(),
+      );
+    },
+    MenuRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const MenuPage(),
+      );
+    },
+    LoadingRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const LoadingPage(),
+      );
+    },
     AppRoute.name: (routeData) {
       final args =
           routeData.argsAs<AppRouteArgs>(orElse: () => const AppRouteArgs());
@@ -35,6 +59,24 @@ abstract class _$AppRouter extends RootStackRouter {
           key: args.key,
           isTest: args.isTest,
         ),
+      );
+    },
+    HideAndSeekRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const HideAndSeekPage(),
+      );
+    },
+    ActionGameRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ActionGamePage(),
+      );
+    },
+    BalanceGameRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const BalanceGamePage(),
       );
     },
     PermissionRoute.name: (routeData) {
@@ -48,16 +90,16 @@ abstract class _$AppRouter extends RootStackRouter {
         ),
       );
     },
+    AuthenticatedRouteWrapper.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const AuthenticatedRouteWrapper(),
+      );
+    },
     AuthenticationRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const AuthenticationPage(),
-      );
-    },
-    LoadingRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const LoadingPage(),
       );
     },
   };
@@ -101,6 +143,62 @@ class HomeRouteArgs {
 }
 
 /// generated route for
+/// [GameMenuPage]
+class GameMenuRoute extends PageRouteInfo<void> {
+  const GameMenuRoute({List<PageRouteInfo>? children})
+      : super(
+          GameMenuRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'GameMenuRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ProfilePage]
+class ProfileRoute extends PageRouteInfo<void> {
+  const ProfileRoute({List<PageRouteInfo>? children})
+      : super(
+          ProfileRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ProfileRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [MenuPage]
+class MenuRoute extends PageRouteInfo<void> {
+  const MenuRoute({List<PageRouteInfo>? children})
+      : super(
+          MenuRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'MenuRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [LoadingPage]
+class LoadingRoute extends PageRouteInfo<void> {
+  const LoadingRoute({List<PageRouteInfo>? children})
+      : super(
+          LoadingRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'LoadingRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
 /// [AppPage]
 class AppRoute extends PageRouteInfo<AppRouteArgs> {
   AppRoute({
@@ -138,12 +236,54 @@ class AppRouteArgs {
 }
 
 /// generated route for
+/// [HideAndSeekPage]
+class HideAndSeekRoute extends PageRouteInfo<void> {
+  const HideAndSeekRoute({List<PageRouteInfo>? children})
+      : super(
+          HideAndSeekRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'HideAndSeekRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ActionGamePage]
+class ActionGameRoute extends PageRouteInfo<void> {
+  const ActionGameRoute({List<PageRouteInfo>? children})
+      : super(
+          ActionGameRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ActionGameRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [BalanceGamePage]
+class BalanceGameRoute extends PageRouteInfo<void> {
+  const BalanceGameRoute({List<PageRouteInfo>? children})
+      : super(
+          BalanceGameRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'BalanceGameRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
 /// [PermissionPage]
 class PermissionRoute extends PageRouteInfo<PermissionRouteArgs> {
   PermissionRoute({
     Key? key,
     required List<Permission> permissions,
-    required void Function(bool) onResult,
+    required void Function({bool success}) onResult,
     List<PageRouteInfo>? children,
   }) : super(
           PermissionRoute.name,
@@ -172,12 +312,26 @@ class PermissionRouteArgs {
 
   final List<Permission> permissions;
 
-  final void Function(bool) onResult;
+  final void Function({bool success}) onResult;
 
   @override
   String toString() {
     return 'PermissionRouteArgs{key: $key, permissions: $permissions, onResult: $onResult}';
   }
+}
+
+/// generated route for
+/// [AuthenticatedRouteWrapper]
+class AuthenticatedRouteWrapper extends PageRouteInfo<void> {
+  const AuthenticatedRouteWrapper({List<PageRouteInfo>? children})
+      : super(
+          AuthenticatedRouteWrapper.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'AuthenticatedRouteWrapper';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
@@ -190,20 +344,6 @@ class AuthenticationRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'AuthenticationRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [LoadingPage]
-class LoadingRoute extends PageRouteInfo<void> {
-  const LoadingRoute({List<PageRouteInfo>? children})
-      : super(
-          LoadingRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'LoadingRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

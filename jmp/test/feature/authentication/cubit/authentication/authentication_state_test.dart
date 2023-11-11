@@ -4,7 +4,7 @@ import 'package:authentication_repository/authentication_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:form_input/form_input.dart';
 import 'package:formz/formz.dart';
-import 'package:j_mp/feature/authentication/cubit/authentication/authentication.dart';
+import 'package:jmp/feature/authentication/cubit/authentication/authentication.dart';
 
 void main() {
   group('AuthenticationState', () {

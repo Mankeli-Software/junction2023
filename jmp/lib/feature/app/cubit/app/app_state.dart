@@ -13,10 +13,7 @@ class AppState with _$AppState {
     /// This is where we keep track of the current lifecycle state of the app. Whether we're in
     /// the foreground, background, or somewhere in between, this is the place to be.
     @Default(AppLifecycleState.detached) AppLifecycleState lifecycleState,
-
-    ////// 
     @Default(User.empty) User currentUser,
-    ////// 
   }) = _AppState;
 }
 

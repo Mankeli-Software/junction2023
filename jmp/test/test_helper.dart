@@ -10,9 +10,9 @@ import 'package:deep_link_repository/deep_link_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:j_mp/main/launch_helper.dart';
-import 'package:j_mp/resource/resource.dart';
-import 'package:j_mp/utility/utility.dart';
+import 'package:jmp/main/launch_helper.dart';
+import 'package:jmp/resource/resource.dart';
+import 'package:jmp/utility/utility.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:notification_repository/notification_repository.dart';
 import 'package:permission_repository/permission_repository.dart';
@@ -28,30 +28,19 @@ class TestHelper {
 
   static late CacheRepository cacheRepository;
 
-  ////// 
   static late CloudFunctionRepository cloudFunctionRepository;
-  ////// 
 
-  ////// 
   static late StorageRepository storageRepository;
-  ////// 
 
   static late DatabaseRepository databaseRepository;
 
-  ////// 
   static late AnalyticRepository analyticRepository;
-  ////// 
-  ////// 
+
   static late AuthenticationRepository authenticationRepository;
-  ////// 
 
-  ////// 
   static late NotificationRepository notificationRepository;
-  ////// 
 
-  ////// 
   static late DeepLinkRepository deepLinkRepository;
-  ////// 
 
   /// {@macro test_helper}
   ///
@@ -61,54 +50,30 @@ class TestHelper {
     permissionRepository = MockPermissionRepository();
     cacheRepository = MockCacheRepository();
 
-    ////// 
     cloudFunctionRepository = MockCloudFunctionRepository();
-    ////// 
 
-    ////// 
     storageRepository = MockStorageRepository();
-    ////// 
 
     databaseRepository = MockDatabaseRepository();
 
-    ////// 
     analyticRepository = MockAnalyticRepository();
-    ////// 
 
-    ////// 
     authenticationRepository = MockAuthenticationRepository();
-    ////// 
 
-    ////// 
     notificationRepository = MockNotificationRepository();
-    ////// 
 
-    ////// 
     deepLinkRepository = MockDeepLinkRepository();
-    ////// 
 
     final repos = [
       permissionRepository,
       cacheRepository,
-      ////// 
       cloudFunctionRepository,
-      ////// 
-      ////// 
       storageRepository,
-      ////// 
       databaseRepository,
-      ////// 
       analyticRepository,
-      ////// 
-      ////// 
       authenticationRepository,
-      ////// 
-      ////// 
       notificationRepository,
-      ////// 
-      ////// 
       deepLinkRepository,
-      ////// 
     ];
 
     for (final repo in repos) {
@@ -125,25 +90,13 @@ class TestHelper {
       providers: [
         RepositoryProvider.value(value: permissionRepository),
         RepositoryProvider.value(value: cacheRepository),
-        ////// 
         RepositoryProvider.value(value: cloudFunctionRepository),
-        ////// 
-        ////// 
         RepositoryProvider.value(value: storageRepository),
-        ////// 
         RepositoryProvider.value(value: databaseRepository),
-        ////// 
         RepositoryProvider.value(value: analyticRepository),
-        ////// 
-        ////// 
         RepositoryProvider.value(value: authenticationRepository),
-        ////// 
-        ////// 
         RepositoryProvider.value(value: notificationRepository),
-        ////// 
-        ////// 
         RepositoryProvider.value(value: deepLinkRepository),
-        ////// 
       ],
       child: Provider<Flavor>.value(
         value: Flavor.development,
@@ -179,33 +132,19 @@ class MockAppRouter extends Mock implements AppRouter {}
 
 class MockCacheRepository extends Mock implements CacheRepository {}
 
-////// 
 class MockCloudFunctionRepository extends Mock
     implements CloudFunctionRepository {}
-////// 
 
-////// 
 class MockStorageRepository extends Mock implements StorageRepository {}
-////// 
 
 class MockDatabaseRepository extends Mock implements DatabaseRepository {}
 
-////// 
 class MockAnalyticRepository extends Mock implements AnalyticRepository {}
-////// 
 
-////// 
 class MockAuthenticationRepository extends Mock
     implements AuthenticationRepository {}
-////// 
 
-////// 
 class MockNotificationRepository extends Mock
     implements NotificationRepository {}
-////// 
 
-////// 
 class MockDeepLinkRepository extends Mock implements DeepLinkRepository {}
-////// 
-
-

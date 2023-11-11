@@ -51,29 +51,14 @@ class _AppPageState extends State<AppPage> with WidgetsBindingObserver {
         flavor: context.flavor,
         router: context.router,
         permissionRepository: context.read<PermissionRepository>(),
-
         databaseRepository: context.read<DatabaseRepository>(),
-
-        ////// 
         authenticationRepository: context.read<AuthenticationRepository>(),
-        ////// 
-        ////// 
         analyticRepository: context.read<AnalyticRepository>(),
-        ////// 
-        ////// 
         notificationRepository: context.read<NotificationRepository>(),
-        ////// 
-        ////// 
         deepLinkRepository: context.read<DeepLinkRepository>(),
-        ////// 
         cacheRepository: context.read<CacheRepository>(),
-        ////// 
         cloudFunctionRepository: context.read<CloudFunctionRepository>(),
-        ////// 
-
-        ////// 
         storageRepository: context.read<StorageRepository>(),
-        ////// 
       )..initialize(),
       child: AppView(isTest: widget.isTest),
     );

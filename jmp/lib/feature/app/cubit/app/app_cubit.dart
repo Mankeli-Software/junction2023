@@ -11,49 +11,24 @@ class AppCubit extends Cubit<AppState> {
     required this.flavor,
     required this.router,
     required this.databaseRepository,
-
-    ////// 
     required this.analyticRepository,
-    ////// 
     required this.permissionRepository,
     required this.cacheRepository,
-    ////// 
     required this.cloudFunctionRepository,
-    ////// 
-    ////// 
     required this.storageRepository,
-    ////// 
-    ////// 
     required this.authenticationRepository,
-    ////// 
-    ////// 
     required this.notificationRepository,
-    ////// 
-    ////// 
     required this.deepLinkRepository,
-    ////// 
   })  : repositories = [
           databaseRepository,
-          ////// 
           analyticRepository,
-          ////// 
           permissionRepository,
           cacheRepository,
-          ////// 
           cloudFunctionRepository,
-          ////// 
-          ////// 
           storageRepository,
-          ////// 
-          ////// 
           authenticationRepository,
-          ////// 
-          ////// 
           notificationRepository,
-          ////// 
-          ////// 
           deepLinkRepository,
-          ////// 
         ],
         super(const AppState());
 
@@ -66,75 +41,53 @@ class AppCubit extends Cubit<AppState> {
   /// {@macro app_cubit}
   final DatabaseRepository databaseRepository;
 
-  ////// 
   /// {@macro app_cubit}
   final AnalyticRepository analyticRepository;
-  ////// 
 
   /// {@macro app_cubit}
   final PermissionRepository permissionRepository;
 
   /// {@macro app_cubit}
   final CacheRepository cacheRepository;
-  ////// 
+
   /// {@macro app_cubit}
   final CloudFunctionRepository cloudFunctionRepository;
-  ////// 
 
-  ////// 
   /// {@macro app_cubit}
   final StorageRepository storageRepository;
-  ////// 
-  ////// 
+
   /// {@macro app_cubit}
   final AuthenticationRepository authenticationRepository;
-  ////// 
-  ////// 
+
   /// {@macro app_cubit}
   final NotificationRepository notificationRepository;
-  ////// 
-  ////// 
+
   /// {@macro app_cubit}
   final DeepLinkRepository deepLinkRepository;
-  ////// 
 
-  ////// 
   StreamSubscription<User>? _authChangeSubscription;
-  ////// 
 
-  ////// 
   StreamSubscription<User>? _notificationTokenSubscription;
-  ////// 
 
   /// {@macro app_cubit}
   @visibleForTesting
   final List<Repository> repositories;
 
-  ////// 
   StreamSubscription<DeepLink>? _deepLinkSubscription;
-  ////// 
 
-  ////// 
   StreamSubscription<PushNotification>? _notificationSubscription;
-  ////// 
 
   /// Initializes the cubit
   Future<void> initialize() async {
     AppLogger.d('initializing');
 
-    ////// 
     analyticRepository.logAppOpen();
-    ////// 
 
     await Future.wait<void>(repositories.map((r) => r.initialize()));
 
-    ////// 
     await handlePushNotificationPermission();
-    ////// 
 
-    ////// 
     analyticRepository.logStartupLogicComplete();
-    ////// 
 
     emit(
       state.copyWith(
@@ -142,16 +95,13 @@ class AppCubit extends Cubit<AppState> {
       ),
     );
 
-    ////// 
     _deepLinkSubscription = deepLinkRepository.deepLinks.listen(
       (deepLink) {
         AppLogger.d('Deep link received: $deepLink');
         deepLink.remoteAction.handle(router);
       },
     );
-    ////// 
 
-    ////// 
     _authChangeSubscription = authenticationRepository.authChanges
         .asyncMap(databaseRepository.ensureUserInitialized)
         .listen(
@@ -163,9 +113,7 @@ class AppCubit extends Cubit<AppState> {
         );
       },
     );
-    ////// 
 
-    ////// 
     _notificationSubscription = notificationRepository.notifications.listen(
       (notification) {
         AppLogger.d('Notification received: $notification');
@@ -185,9 +133,7 @@ class AppCubit extends Cubit<AppState> {
             notificationTokens: [...tokens, t.token],
           );
         })
-        ////// 
         .asyncMap(databaseRepository.ensureUserInitialized)
-        ////// 
         .listen((user) {
           emit(
             state.copyWith(
@@ -196,7 +142,6 @@ class AppCubit extends Cubit<AppState> {
           );
         });
     await notificationRepository.allowInAppMessages();
-    ////// 
   }
 
   /// This is where we set the current app lifecycle. Whether we're in the foreground,
@@ -212,7 +157,6 @@ class AppCubit extends Cubit<AppState> {
     return Future.value();
   }
 
-  ////// 
   /// This is where we handle all the nitty-gritty details of sending push notifications.
   /// Whether we're granting access or denying it, this is where it all goes down.
   @visibleForTesting
@@ -224,24 +168,17 @@ class AppCubit extends Cubit<AppState> {
       await databaseRepository.setNotificationPermissionsPrompted();
     }
   }
-  ////// 
 
   @override
   Future<void> close() async {
-    ////// 
     await _deepLinkSubscription?.cancel();
-    ////// 
-    ////// 
+
     await _notificationSubscription?.cancel();
-    ////// 
 
-    ////// 
     await _authChangeSubscription?.cancel();
-    ////// 
 
-    ////// 
     await _notificationTokenSubscription?.cancel();
-    ////// 
+
     ///
     await Future.wait(repositories.map((r) => r.dispose()));
 

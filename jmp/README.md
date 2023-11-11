@@ -62,7 +62,7 @@ A Flutter app template that gives an unfair head start to the development of a n
 ## setup new project
 1. Create a new project
     ```sh
-    mankeli gen j_mp
+    mankeli gen jmp
     ```
 2. Navigate to the newly created directory
     ```sh
@@ -83,7 +83,7 @@ A Flutter app template that gives an unfair head start to the development of a n
 
 # Architecture 🏛️
 ![architecture diagram][3]
-The architecture of j_mp is divided into 3 layers; `application`, `domain` and `data`. Let's walk through the layers one-by-one, starting from the one closest to the user.
+The architecture of jmp is divided into 3 layers; `application`, `domain` and `data`. Let's walk through the layers one-by-one, starting from the one closest to the user.
 
 ## application layer 
 Everything the user sees belongs to this layer, making it responsible for presentation logic. The main building blocks of this layer are `views`, `cubits` and `states`.
