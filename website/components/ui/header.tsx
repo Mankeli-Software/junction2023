@@ -16,7 +16,7 @@ export default function Header() {
             </Link>
           </div>
           <div className="shrink-0 mr-4">
-            <p className="flex justify-end">J-MP</p>
+            <p className="flex justify-end font-bold italic">J-mp</p>
           </div>
 
           {/* Desktop navigation */}
