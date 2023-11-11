@@ -2,8 +2,6 @@ import Link from 'next/link'
 import MobileMenu from './mobile-menu'
 import Image from 'next/image'
 import JmpLogoRound from '@/public/images/j-mp_icon_noBG.png'
-import AppStore from '@/public/images/App_store_button.png'
-import GooglePlay from '@/public/images/Google_play_button.png'
 
 export default function Header() {
   return (
