@@ -4,9 +4,8 @@ import JmpLogoRound from '@/public/images/j-mp_icon_noBG.png'
 
 export default function WebpanelHeader() {
     return(
-
     <header className="absolute w-full z-30 ">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 bg-purple-700">
+      <div className="max-w mx-auto px-4 sm:px-6 bg-purple-700">
         <div className="flex items-center h-full">
           {/* Site branding */}
           <div className="shrink-0 mr-4">
