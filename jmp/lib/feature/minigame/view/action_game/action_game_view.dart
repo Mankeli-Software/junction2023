@@ -28,13 +28,13 @@ class ActionGameView extends StatelessWidget {
     return BlocConsumer<ActionGameCubit, ActionGameState>(
       listenWhen: (s1, s2) => true,
       listener: (context, state) {
-        // if (state.timeLeft.isNegative) {
-        //   context.router.pop(false);
-        // }
+        if (state.timeLeft.isNegative) {
+          context.router.pop(false);
+        }
 
-        // if (state.status == ActionGameStatus.success) {
-        //   context.router.pop(true);
-        // }
+        if (state.status == ActionGameStatus.success) {
+          context.router.pop(true);
+        }
       },
       buildWhen: (s1, s2) => true,
       builder: (context, state) {
