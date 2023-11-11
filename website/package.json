@@ -14,7 +14,8 @@
     "aos": "^3.0.0-beta.6",
     "next": "^13.4.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-rotating-text": "^1.4.1"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.3",

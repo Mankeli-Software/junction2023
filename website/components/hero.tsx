@@ -1,7 +1,15 @@
+'use client'
+
 import VideoThumb from '@/public/images/hero-image-01.jpg'
 import ModalVideo from '@/components/modal-video'
 
+//import sextext.css as additional style
+import '../app/css/additional-styles/sextext.css'
+
+
 export default function Hero() {
+  var ReactRotatingText = require('react-rotating-text');
+
   return (
     <section>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
@@ -25,7 +33,13 @@ export default function Hero() {
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
             <h1 className="h1 mb-4" data-aos="fade-up">Junior Movement Platform</h1>
-            <p className="text-xl text-gray-400 mb-8" data-aos="fade-up" data-aos-delay="200">PÖHISEEEEEEEEE :D</p>
+
+            {/* changing text sex */}
+            <div className="mb-4 h4 sextext">
+            J-mp <ReactRotatingText items={['to Adventure', 'With Friends', 'Into Action', 'into Fun', 'Online', 'Beyond', 'into Motion', 'Around', 'for Joy', 'Forward']
+} pause={1000} emptyPause={500} />
+            </div>
+            { /* buttons */}
             <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center">
               <div data-aos="fade-up" data-aos-delay="400">
                 <a className="btn text-white bg-purple-600 hover:bg-purple-700 w-full mb-4 sm:w-auto sm:mb-0" href="#0">Start free trial</a>
