@@ -1,3 +1,8 @@
+import AppStore from '@/public/images/App_store_button.png'
+import GooglePlay from '@/public/images/Google_play_button.png'
+import Link from 'next/link'
+import Image from 'next/image'
+
 export default function Newsletter() {
   return (
     <section>
@@ -26,6 +31,23 @@ export default function Newsletter() {
               <h3 className="h3 text-white mb-2">Vote for us!</h3>
               <p className="text-purple-200 text-lg">Let's make the world a happier and healthier place for everyone!</p>
             </div>
+
+            {/* Desktop navigation */}
+            <nav className="hidden md:flex md:grow">
+              {/* Desktop sign in links */}
+              <ul className="flex grow justify-end flex-wrap items-center">
+                <li>
+                  <Link href="https://youtu.be/dQw4w9WgXcQ?si=ETn2YjQIgkxEVDSc" className="">
+                    <Image className="full" src={GooglePlay} width={135} height={135} alt="Google Play" />
+                  </Link>
+                </li>
+                <li>
+                  <Link href="https://youtu.be/dQw4w9WgXcQ?si=ETn2YjQIgkxEVDSc" className="">
+                    <Image className="full" src={AppStore} width={120} height={120} alt="App Store" />
+                  </Link>
+                </li>
+              </ul>
+            </nav>
 
           </div>
 
