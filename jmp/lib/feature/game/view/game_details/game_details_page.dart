@@ -8,14 +8,20 @@ part of 'game_details.dart';
 @RoutePage()
 class GameDetailsPage extends StatelessWidget {
   /// {@macro game_details_page}
-  const GameDetailsPage({super.key});
+  const GameDetailsPage({super.key, required this.game});
+
+  /// The game to display
+  final GameDetails game;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(game.title),
+      ),
       body: BlocProvider<GameDetailsCubit>(
         create: (_) => GameDetailsCubit()..initialize(),
-        child: const GameDetailsView(),
+        child: GameDetailsView(game: game),
       ),
     );
   }

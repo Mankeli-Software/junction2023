@@ -62,9 +62,13 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
     GameDetailsRoute.name: (routeData) {
+      final args = routeData.argsAs<GameDetailsRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const GameDetailsPage(),
+        child: GameDetailsPage(
+          key: args.key,
+          game: args.game,
+        ),
       );
     },
     HideAndSeekRoute.name: (routeData) {
@@ -243,16 +247,40 @@ class AppRouteArgs {
 
 /// generated route for
 /// [GameDetailsPage]
-class GameDetailsRoute extends PageRouteInfo<void> {
-  const GameDetailsRoute({List<PageRouteInfo>? children})
-      : super(
+class GameDetailsRoute extends PageRouteInfo<GameDetailsRouteArgs> {
+  GameDetailsRoute({
+    Key? key,
+    required GameDetails game,
+    List<PageRouteInfo>? children,
+  }) : super(
           GameDetailsRoute.name,
+          args: GameDetailsRouteArgs(
+            key: key,
+            game: game,
+          ),
           initialChildren: children,
         );
 
   static const String name = 'GameDetailsRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const PageInfo<GameDetailsRouteArgs> page =
+      PageInfo<GameDetailsRouteArgs>(name);
+}
+
+class GameDetailsRouteArgs {
+  const GameDetailsRouteArgs({
+    this.key,
+    required this.game,
+  });
+
+  final Key? key;
+
+  final GameDetails game;
+
+  @override
+  String toString() {
+    return 'GameDetailsRouteArgs{key: $key, game: $game}';
+  }
 }
 
 /// generated route for

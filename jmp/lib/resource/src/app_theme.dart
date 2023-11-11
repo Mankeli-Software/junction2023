@@ -22,8 +22,7 @@ class AppTheme extends ChangeNotifier {
 
   void _update() {
     final brightness = PlatformDispatcher.instance.platformBrightness;
-    dynamicTheme =
-        brightness == Brightness.dark ? AppThemeDark() : AppThemeLight();
+    dynamicTheme = brightness == Brightness.dark ? AppThemeDark() : AppThemeLight();
 
     notifyListeners();
   }
@@ -283,7 +282,7 @@ class AppThemeLight extends AppTheme {
   Color get onBackgroundColor => const Color(0xFF191C1D);
 
   @override
-  Color get containerColor => const Color(0xFFB1ECFF);
+  Color get containerColor => const Color(0xFFdde7eb);
 
   @override
   Color get onContainerColor => const Color(0xFF001F27);
@@ -323,7 +322,7 @@ class AppThemeDark extends AppTheme {
   @override
   Color get onBackgroundColor => const Color(0xFFE1E3E4);
 
-  @override
+  @override // TODO(JTorkk): Might be bad color in dark mode
   Color get containerColor => const Color(0xFF004E5E);
 
   @override

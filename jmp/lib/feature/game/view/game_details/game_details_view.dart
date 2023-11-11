@@ -5,7 +5,10 @@ part of 'game_details.dart';
 /// {@endtemplate}
 class GameDetailsView extends StatelessWidget {
   /// {@macro game_details_view}
-  const GameDetailsView({super.key});
+  const GameDetailsView({super.key, required this.game});
+
+  /// The game to display
+  final GameDetails game;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +19,24 @@ class GameDetailsView extends StatelessWidget {
       },
       buildWhen: (s1, s2) => true,
       builder: (context, state) {
-        return const Placeholder();
+        return SizedBox(
+          // height: 300,
+          width: double.infinity,
+          child: Hero(
+            transitionOnUserGestures: true,
+            tag: game.id,
+            child: CachedNetworkImage(
+              alignment: Alignment(0, game.verticalAlignment),
+              fit: BoxFit.fitWidth,
+              imageUrl: game.imgageUrl,
+              errorWidget: (context, url, error) => const Center(
+                child: FaIcon(
+                  FontAwesomeIcons.triangleExclamation,
+                ),
+              ),
+            ),
+          ),
+        );
       },
     );
   }
