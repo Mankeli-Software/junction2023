@@ -9,7 +9,7 @@ class ActionGameState with _$ActionGameState {
   const factory ActionGameState({
     @Default(ActionGameStatus.initializing) ActionGameStatus status,
     @Default(1) int currentProgress,
-    @Default(10) int requiredProgress,
+    @Default(30) int requiredProgress,
     @Default(Duration(minutes: 1)) Duration timeLeft,
   }) = _ActionGameState;
 }

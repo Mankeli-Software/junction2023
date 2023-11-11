@@ -31,11 +31,18 @@ class ActionGameCubit extends Cubit<ActionGameState> {
       );
     });
 
-    _accelerometerSubscription = accelerometerEvents.listen((event) {
+    _accelerometerSubscription = accelerometerEvents.listen((event) async {
       final total = event.x + event.y + event.z;
 
       if (total > _treshold) {
         final newProgress = state.currentProgress + 1;
+        if ((await Vibration.hasVibrator()) ?? false) {
+          await Vibration.vibrate(
+            amplitude: 100,
+            duration: 100,
+          );
+        }
+        await Vibration.vibrate();
         emit(
           state.copyWith(
             currentProgress: min(

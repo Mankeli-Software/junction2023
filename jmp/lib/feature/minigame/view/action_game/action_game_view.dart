@@ -46,11 +46,8 @@ class ActionGameView extends StatelessWidget {
           child: Scaffold(
             appBar: AppBar(
               automaticallyImplyLeading: false,
-              title: Text(
+              title: const Text(
                 'Minigame',
-                style: theme.titleLarge.copyWith(
-                  color: theme.onPrimaryColor,
-                ),
               ),
             ),
             body: SafeArea(
@@ -133,6 +130,7 @@ class ActionGameView extends StatelessWidget {
                       child: Text(
                         'Swiftly move your phone around to fill the progress bar!',
                         style: theme.labelSmall,
+                        textAlign: TextAlign.center,
                       ),
                     ),
                   ],

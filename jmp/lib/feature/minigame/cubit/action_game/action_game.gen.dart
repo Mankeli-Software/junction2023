@@ -136,7 +136,7 @@ class _$ActionGameStateImpl implements _ActionGameState {
   const _$ActionGameStateImpl(
       {this.status = ActionGameStatus.initializing,
       this.currentProgress = 1,
-      this.requiredProgress = 10,
+      this.requiredProgress = 30,
       this.timeLeft = const Duration(minutes: 1)});
 
   @override

@@ -24,11 +24,14 @@ dependencies:
   deep_link_repository:
     path: package/domain/deep_link_repository
   dot_navigation_bar: ^1.0.2
+  firebase_core: any
+  firebase_core_platform_interface: any
   firebase_crashlytics: ^3.1.0
   firebase_remote_config: ^4.2.0
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.3
+  flutter_compass: ^0.8.0
   flutter_localizations:
     sdk: flutter
   flutter_native_splash: any
@@ -40,10 +43,12 @@ dependencies:
   formz: any
   freezed: ^2.4.5
   freezed_annotation: ^2.4.1
+  geolocator: ^10.1.0
   google_fonts: ^4.0.1
   intl: any
   json_annotation: ^4.8.0
   json_serializable: ^6.6.1
+  latlong2: ^0.9.0
   mankeli_core: ^0.0.2
   model:
     path: package/domain/model
@@ -56,6 +61,7 @@ dependencies:
   sensors_plus: ^3.1.0
   storage_repository:
     path: package/domain/storage_repository
+  vibration: ^1.8.3
 
 dev_dependencies:
   auto_route_generator: ^6.1.0
