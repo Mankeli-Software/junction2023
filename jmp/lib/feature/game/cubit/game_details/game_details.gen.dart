@@ -17,6 +17,8 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$GameDetailsState {
   GameDetailsStatus get status => throw _privateConstructorUsedError;
+  double? get scrollOffset => throw _privateConstructorUsedError;
+  bool get titleIsDown => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $GameDetailsStateCopyWith<GameDetailsState> get copyWith =>
@@ -29,7 +31,7 @@ abstract class $GameDetailsStateCopyWith<$Res> {
           GameDetailsState value, $Res Function(GameDetailsState) then) =
       _$GameDetailsStateCopyWithImpl<$Res, GameDetailsState>;
   @useResult
-  $Res call({GameDetailsStatus status});
+  $Res call({GameDetailsStatus status, double? scrollOffset, bool titleIsDown});
 }
 
 /// @nodoc
@@ -46,12 +48,22 @@ class _$GameDetailsStateCopyWithImpl<$Res, $Val extends GameDetailsState>
   @override
   $Res call({
     Object? status = null,
+    Object? scrollOffset = freezed,
+    Object? titleIsDown = null,
   }) {
     return _then(_value.copyWith(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as GameDetailsStatus,
+      scrollOffset: freezed == scrollOffset
+          ? _value.scrollOffset
+          : scrollOffset // ignore: cast_nullable_to_non_nullable
+              as double?,
+      titleIsDown: null == titleIsDown
+          ? _value.titleIsDown
+          : titleIsDown // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -64,7 +76,7 @@ abstract class _$$GameDetailsStateImplCopyWith<$Res>
       __$$GameDetailsStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({GameDetailsStatus status});
+  $Res call({GameDetailsStatus status, double? scrollOffset, bool titleIsDown});
 }
 
 /// @nodoc
@@ -79,12 +91,22 @@ class __$$GameDetailsStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? status = null,
+    Object? scrollOffset = freezed,
+    Object? titleIsDown = null,
   }) {
     return _then(_$GameDetailsStateImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as GameDetailsStatus,
+      scrollOffset: freezed == scrollOffset
+          ? _value.scrollOffset
+          : scrollOffset // ignore: cast_nullable_to_non_nullable
+              as double?,
+      titleIsDown: null == titleIsDown
+          ? _value.titleIsDown
+          : titleIsDown // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -92,15 +114,24 @@ class __$$GameDetailsStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GameDetailsStateImpl implements _GameDetailsState {
-  const _$GameDetailsStateImpl({this.status = GameDetailsStatus.initializing});
+  const _$GameDetailsStateImpl(
+      {this.status = GameDetailsStatus.initializing,
+      this.scrollOffset = 0,
+      this.titleIsDown = true});
 
   @override
   @JsonKey()
   final GameDetailsStatus status;
+  @override
+  @JsonKey()
+  final double? scrollOffset;
+  @override
+  @JsonKey()
+  final bool titleIsDown;
 
   @override
   String toString() {
-    return 'GameDetailsState(status: $status)';
+    return 'GameDetailsState(status: $status, scrollOffset: $scrollOffset, titleIsDown: $titleIsDown)';
   }
 
   @override
@@ -108,11 +139,16 @@ class _$GameDetailsStateImpl implements _GameDetailsState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GameDetailsStateImpl &&
-            (identical(other.status, status) || other.status == status));
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.scrollOffset, scrollOffset) ||
+                other.scrollOffset == scrollOffset) &&
+            (identical(other.titleIsDown, titleIsDown) ||
+                other.titleIsDown == titleIsDown));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, status);
+  int get hashCode =>
+      Object.hash(runtimeType, status, scrollOffset, titleIsDown);
 
   @JsonKey(ignore: true)
   @override
@@ -123,11 +159,17 @@ class _$GameDetailsStateImpl implements _GameDetailsState {
 }
 
 abstract class _GameDetailsState implements GameDetailsState {
-  const factory _GameDetailsState({final GameDetailsStatus status}) =
-      _$GameDetailsStateImpl;
+  const factory _GameDetailsState(
+      {final GameDetailsStatus status,
+      final double? scrollOffset,
+      final bool titleIsDown}) = _$GameDetailsStateImpl;
 
   @override
   GameDetailsStatus get status;
+  @override
+  double? get scrollOffset;
+  @override
+  bool get titleIsDown;
   @override
   @JsonKey(ignore: true)
   _$$GameDetailsStateImplCopyWith<_$GameDetailsStateImpl> get copyWith =>

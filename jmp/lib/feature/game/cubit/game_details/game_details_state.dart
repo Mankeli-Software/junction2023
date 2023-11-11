@@ -7,8 +7,9 @@ part of 'game_details.dart';
 class GameDetailsState with _$GameDetailsState {
   /// {@macro game_details_state}
   const factory GameDetailsState({
-    @Default(GameDetailsStatus.initializing)
-        GameDetailsStatus status,
+    @Default(GameDetailsStatus.initializing) GameDetailsStatus status,
+    @Default(0) double? scrollOffset,
+    @Default(true) bool titleIsDown,
   }) = _GameDetailsState;
 }
 

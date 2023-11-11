@@ -16,9 +16,9 @@ class GameDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(game.title),
-      ),
+      // appBar: AppBar(
+      //   title: Text(game.title),
+      // ),
       body: BlocProvider<GameDetailsCubit>(
         create: (_) => GameDetailsCubit()..initialize(),
         child: GameDetailsView(game: game),

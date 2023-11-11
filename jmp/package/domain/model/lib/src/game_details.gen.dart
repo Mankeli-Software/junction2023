@@ -33,7 +33,7 @@ mixin _$GameDetails {
   String get subtitle => throw _privateConstructorUsedError;
 
   /// The gamedetails description
-  dynamic get decription => throw _privateConstructorUsedError;
+  String get decription => throw _privateConstructorUsedError;
 
   /// Sensor types available for the game
   List<SensorTypes> get sensorTypes => throw _privateConstructorUsedError;
@@ -58,7 +58,7 @@ abstract class $GameDetailsCopyWith<$Res> {
       String imgageUrl,
       String title,
       String subtitle,
-      dynamic decription,
+      String decription,
       List<SensorTypes> sensorTypes,
       double verticalAlignment});
 }
@@ -80,7 +80,7 @@ class _$GameDetailsCopyWithImpl<$Res, $Val extends GameDetails>
     Object? imgageUrl = null,
     Object? title = null,
     Object? subtitle = null,
-    Object? decription = freezed,
+    Object? decription = null,
     Object? sensorTypes = null,
     Object? verticalAlignment = null,
   }) {
@@ -101,10 +101,10 @@ class _$GameDetailsCopyWithImpl<$Res, $Val extends GameDetails>
           ? _value.subtitle
           : subtitle // ignore: cast_nullable_to_non_nullable
               as String,
-      decription: freezed == decription
+      decription: null == decription
           ? _value.decription
           : decription // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
       sensorTypes: null == sensorTypes
           ? _value.sensorTypes
           : sensorTypes // ignore: cast_nullable_to_non_nullable
@@ -130,7 +130,7 @@ abstract class _$$GameDetailsImplCopyWith<$Res>
       String imgageUrl,
       String title,
       String subtitle,
-      dynamic decription,
+      String decription,
       List<SensorTypes> sensorTypes,
       double verticalAlignment});
 }
@@ -150,7 +150,7 @@ class __$$GameDetailsImplCopyWithImpl<$Res>
     Object? imgageUrl = null,
     Object? title = null,
     Object? subtitle = null,
-    Object? decription = freezed,
+    Object? decription = null,
     Object? sensorTypes = null,
     Object? verticalAlignment = null,
   }) {
@@ -171,7 +171,10 @@ class __$$GameDetailsImplCopyWithImpl<$Res>
           ? _value.subtitle
           : subtitle // ignore: cast_nullable_to_non_nullable
               as String,
-      decription: freezed == decription ? _value.decription! : decription,
+      decription: null == decription
+          ? _value.decription
+          : decription // ignore: cast_nullable_to_non_nullable
+              as String,
       sensorTypes: null == sensorTypes
           ? _value._sensorTypes
           : sensorTypes // ignore: cast_nullable_to_non_nullable
@@ -221,7 +224,7 @@ class _$GameDetailsImpl extends _GameDetails {
   /// The gamedetails description
   @override
   @JsonKey()
-  final dynamic decription;
+  final String decription;
 
   /// Sensor types available for the game
   final List<SensorTypes> _sensorTypes;
@@ -256,8 +259,8 @@ class _$GameDetailsImpl extends _GameDetails {
             (identical(other.title, title) || other.title == title) &&
             (identical(other.subtitle, subtitle) ||
                 other.subtitle == subtitle) &&
-            const DeepCollectionEquality()
-                .equals(other.decription, decription) &&
+            (identical(other.decription, decription) ||
+                other.decription == decription) &&
             const DeepCollectionEquality()
                 .equals(other._sensorTypes, _sensorTypes) &&
             (identical(other.verticalAlignment, verticalAlignment) ||
@@ -272,7 +275,7 @@ class _$GameDetailsImpl extends _GameDetails {
       imgageUrl,
       title,
       subtitle,
-      const DeepCollectionEquality().hash(decription),
+      decription,
       const DeepCollectionEquality().hash(_sensorTypes),
       verticalAlignment);
 
@@ -296,7 +299,7 @@ abstract class _GameDetails extends GameDetails {
       required final String imgageUrl,
       required final String title,
       final String subtitle,
-      final dynamic decription,
+      final String decription,
       final List<SensorTypes> sensorTypes,
       final double verticalAlignment}) = _$GameDetailsImpl;
   const _GameDetails._() : super._();
@@ -323,7 +326,7 @@ abstract class _GameDetails extends GameDetails {
   @override
 
   /// The gamedetails description
-  dynamic get decription;
+  String get decription;
   @override
 
   /// Sensor types available for the game
