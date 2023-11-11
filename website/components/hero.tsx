@@ -36,8 +36,8 @@ export default function Hero() {
 
             {/* changing text sex */}
             <div className="mb-4 h4 sextext">
-            J-mp <ReactRotatingText items={['to Adventure', 'with Friends', 'into Action', 'into Fun', 'Online', 'Beyond', 'into Motion', 'Around', 'Forward']
-} pause={1000} emptyPause={500} />
+            J-mp <span><ReactRotatingText items={['to Adventure', 'with Friends', 'into Action', 'into Fun', 'Online', 'Beyond', 'into Motion', 'Around', 'Forward']
+            } pause={1000} emptyPause={500} /></span>
             </div>
           </div>
 

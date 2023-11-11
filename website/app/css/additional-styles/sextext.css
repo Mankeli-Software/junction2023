@@ -17,3 +17,7 @@
 .sextext {
     font-style: italic;
 }
+
+.sextext span {
+  color: #009ebd;
+}
