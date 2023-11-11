@@ -45,6 +45,7 @@ dependencies:
   json_annotation: ^4.8.0
   json_serializable: ^6.6.1
   mankeli_core: ^0.0.2
+  mobile_scanner: ^3.5.2
   model:
     path: package/domain/model
   notification_repository:

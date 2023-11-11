@@ -23,7 +23,7 @@ class GameDetails with _$GameDetails {
     @Default('') String subtitle,
 
     /// The gamedetails description
-    @Default('') decription,
+    @Default('') String decription,
 
     /// Sensor types available for the game
     @Default([]) List<SensorTypes> sensorTypes,

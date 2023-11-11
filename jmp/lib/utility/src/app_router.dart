@@ -102,6 +102,9 @@ class AppRouter extends _$AppRouter {
                 AutoRoute(
                   page: GameDetailsRoute.page,
                 ),
+                AutoRoute(
+                  page: JoinGameRoute.page,
+                ),
               ],
             ),
             AutoRoute(

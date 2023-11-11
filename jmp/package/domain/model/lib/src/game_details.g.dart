@@ -12,7 +12,7 @@ _$GameDetailsImpl _$$GameDetailsImplFromJson(Map<String, dynamic> json) =>
       imgageUrl: json['imgageUrl'] as String,
       title: json['title'] as String,
       subtitle: json['subtitle'] as String? ?? '',
-      decription: json['decription'] ?? '',
+      decription: json['decription'] as String? ?? '',
       sensorTypes: (json['sensorTypes'] as List<dynamic>?)
               ?.map((e) => $enumDecode(_$SensorTypesEnumMap, e))
               .toList() ??

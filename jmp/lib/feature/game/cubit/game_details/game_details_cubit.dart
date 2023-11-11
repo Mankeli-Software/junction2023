@@ -22,4 +22,14 @@ class GameDetailsCubit extends Cubit<GameDetailsState> {
       ),
     );
   }
+
+  /// Sets the scroll offset
+  void setScrollOffset(double offset) {
+    emit(
+      state.copyWith(
+        // scrollOffset: offset,
+        titleIsDown: offset < 300,
+      ),
+    );
+  }
 }
