@@ -31,22 +31,13 @@ export default function Hero() {
         <div className="relative pt-32 pb-10 md:pt-40 md:pb-16">
 
           {/* Section header */}
-          <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
+          <div className="max-w-3xl mx-auto text-center pb-4 md:pb-4">
             <h1 className="h1 mb-4" data-aos="fade-up">Junior Movement Platform</h1>
 
             {/* changing text sex */}
             <div className="mb-4 h4 sextext">
-            J-mp <ReactRotatingText items={['to Adventure', 'With Friends', 'Into Action', 'into Fun', 'Online', 'Beyond', 'into Motion', 'Around', 'for Joy', 'Forward']
+            J-mp <ReactRotatingText items={['to Adventure', 'with Friends', 'into Action', 'into Fun', 'Online', 'Beyond', 'into Motion', 'Around', 'Forward']
 } pause={1000} emptyPause={500} />
-            </div>
-            { /* buttons */}
-            <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center">
-              <div data-aos="fade-up" data-aos-delay="400">
-                <a className="btn text-white bg-purple-600 hover:bg-purple-700 w-full mb-4 sm:w-auto sm:mb-0" href="#0">Start free trial</a>
-              </div>
-              <div data-aos="fade-up" data-aos-delay="600">
-                <a className="btn text-white bg-gray-700 hover:bg-gray-800 w-full sm:w-auto sm:ml-4" href="#0">Learn more</a>
-              </div>
             </div>
           </div>
 
