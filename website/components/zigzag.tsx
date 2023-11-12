@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 import FeatImage01 from '@/public/images/paskamockup1.jpg'
 import FeatImage02 from '@/public/images/mockup2.gif'
-import FeatImage03 from '@/public/images/control_panel.png'
+import FeatImage03 from '@/public/images/platform.png'
 
 export default function Zigzag() {
   return (
