@@ -7,6 +7,7 @@ import 'package:database_repository/database_repository.dart';
 import 'package:deep_link_repository/deep_link_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:jmp/feature/feature.dart';
+import 'package:jmp/feature/game/view/map_demo_page.dart';
 import 'package:mankeli_core/mankeli_core.dart';
 import 'package:model/model.dart';
 import 'package:notification_repository/notification_repository.dart';
@@ -69,6 +70,7 @@ class AppRouter extends _$AppRouter {
 
   @override
   List<AutoRoute> get routes => [
+        // const MapDemoPage()
         AutoRoute(
           page: AppRoute.page,
           path: '/',
@@ -104,6 +106,9 @@ class AppRouter extends _$AppRouter {
                 ),
                 AutoRoute(
                   page: JoinGameRoute.page,
+                ),
+                AutoRoute(
+                  page: MapDemoRoute.page,
                 ),
               ],
             ),

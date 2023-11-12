@@ -71,6 +71,12 @@ abstract class _$AppRouter extends RootStackRouter {
         ),
       );
     },
+    MapDemoRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const MapDemoPage(),
+      );
+    },
     JoinGameRoute.name: (routeData) {
       final args = routeData.argsAs<JoinGameRouteArgs>();
       return AutoRoutePage<dynamic>(
@@ -302,6 +308,20 @@ class GameDetailsRouteArgs {
   String toString() {
     return 'GameDetailsRouteArgs{key: $key, game: $game}';
   }
+}
+
+/// generated route for
+/// [MapDemoPage]
+class MapDemoRoute extends PageRouteInfo<void> {
+  const MapDemoRoute({List<PageRouteInfo>? children})
+      : super(
+          MapDemoRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'MapDemoRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
