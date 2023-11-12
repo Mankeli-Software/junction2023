@@ -88,6 +88,7 @@ abstract class _$AppRouter extends RootStackRouter {
         child: HideAndSeekPage(
           key: args.key,
           details: args.details,
+          isSeeker: args.isSeeker,
         ),
       );
     },
@@ -347,12 +348,14 @@ class HideAndSeekRoute extends PageRouteInfo<HideAndSeekRouteArgs> {
   HideAndSeekRoute({
     Key? key,
     required GameDetails details,
+    required bool isSeeker,
     List<PageRouteInfo>? children,
   }) : super(
           HideAndSeekRoute.name,
           args: HideAndSeekRouteArgs(
             key: key,
             details: details,
+            isSeeker: isSeeker,
           ),
           initialChildren: children,
         );
@@ -367,15 +370,18 @@ class HideAndSeekRouteArgs {
   const HideAndSeekRouteArgs({
     this.key,
     required this.details,
+    required this.isSeeker,
   });
 
   final Key? key;
 
   final GameDetails details;
 
+  final bool isSeeker;
+
   @override
   String toString() {
-    return 'HideAndSeekRouteArgs{key: $key, details: $details}';
+    return 'HideAndSeekRouteArgs{key: $key, details: $details, isSeeker: $isSeeker}';
   }
 }
 

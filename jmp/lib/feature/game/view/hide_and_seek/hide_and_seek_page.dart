@@ -11,10 +11,14 @@ class HideAndSeekPage extends StatelessWidget {
   const HideAndSeekPage({
     super.key,
     required this.details,
+    required this.isSeeker,
   });
 
   /// The details of the game
   final GameDetails details;
+
+  /// Whether to show seeker or hider ui
+  final bool isSeeker;
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +27,7 @@ class HideAndSeekPage extends StatelessWidget {
         create: (_) => HideAndSeekCubit()..initialize(),
         child: HideAndSeekView(
           details: details,
+          isSeeker: isSeeker,
         ),
       ),
     );

@@ -9,6 +9,7 @@ import 'package:jmp/extension/extension.dart';
 import 'package:jmp/feature/game/game.dart';
 import 'package:jmp/utility/src/app_router.dart';
 import 'package:model/model.dart';
+import 'package:qr_flutter/qr_flutter.dart';
 
 part 'hide_and_seek_page.dart';
 part 'hide_and_seek_view.dart';

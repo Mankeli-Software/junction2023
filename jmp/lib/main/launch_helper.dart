@@ -204,6 +204,7 @@ class _Bootstrap extends StatelessWidget {
             builder: (context, theme, child) {
               return Center(
                 child: MaterialApp.router(
+                  debugShowCheckedModeBanner: false,
                   localizationsDelegates: const [
                     AppLocalizations.delegate,
                     GlobalMaterialLocalizations.delegate,

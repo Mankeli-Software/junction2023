@@ -28,27 +28,22 @@ class ActionGameView extends StatelessWidget {
     return BlocConsumer<ActionGameCubit, ActionGameState>(
       listenWhen: (s1, s2) => true,
       listener: (context, state) {
-        // if (state.timeLeft.isNegative) {
-        //   context.router.pop(false);
-        // }
+        if (state.timeLeft.isNegative) {
+          context.router.pop(false);
+        }
 
-        // if (state.status == ActionGameStatus.success) {
-        //   context.router.pop(true);
-        // }
+        if (state.status == ActionGameStatus.success) {
+          context.router.pop(true);
+        }
       },
       buildWhen: (s1, s2) => true,
       builder: (context, state) {
         return WillPopScope(
           onWillPop: () async {
-            return state.timeLeft.isNegative || state.status == ActionGameStatus.success;
+            return state.timeLeft.isNegative ||
+                state.status == ActionGameStatus.success;
           },
           child: Scaffold(
-            // appBar: AppBar(
-            //   automaticallyImplyLeading: false,
-            //   title: const Text(
-            //     'Minigame',
-            //   ),
-            // ),
             body: SafeArea(
               top: false,
               child: Column(
@@ -65,13 +60,6 @@ class ActionGameView extends StatelessWidget {
                             constraints.maxWidth,
                           ),
                         );
-                        // return Image.network(
-                        //   imageUrl,
-                        //   height: min(
-                        //     constraints.maxHeight,
-                        //     constraints.maxWidth,
-                        //   ),
-                        // );
                       },
                     ),
                   ),

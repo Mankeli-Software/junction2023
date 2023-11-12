@@ -100,7 +100,7 @@ class GameMenuView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Activites',
+                    'Activities',
                     style: theme.headlineMedium.copyWith(
                       fontWeight: FontWeight.bold,
                       color: theme.primaryColor,

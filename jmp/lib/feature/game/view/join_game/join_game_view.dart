@@ -75,7 +75,8 @@ class JoinGameView extends StatelessWidget {
                 ),
                 const Spacer(),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
                   child: LinearProgressIndicator(
                     minHeight: 20,
                     backgroundColor: theme.primaryColor.withOpacity(0.4),
@@ -108,7 +109,12 @@ class JoinGameView extends StatelessWidget {
                   const Spacer(),
                   TextButton(
                     onPressed: () {
-                      context.router.push(HideAndSeekRoute(details: details));
+                      context.router.replace(
+                        HideAndSeekRoute(
+                          details: details,
+                          isSeeker: false,
+                        ),
+                      );
                     },
                     child: Container(
                       padding: const EdgeInsets.symmetric(
@@ -117,7 +123,8 @@ class JoinGameView extends StatelessWidget {
                       ),
                       decoration: BoxDecoration(
                         color: theme.primaryColor,
-                        borderRadius: const BorderRadius.all(Radius.circular(40)),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(40)),
                       ),
                       child: Text(
                         'Join Game',

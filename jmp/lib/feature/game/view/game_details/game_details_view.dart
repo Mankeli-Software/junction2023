@@ -112,7 +112,9 @@ class GameDetailsView extends StatelessWidget {
                         title: Container(
                           color: theme.backgroundColor,
                           padding: const EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 30),
+                            horizontal: 20,
+                            vertical: 30,
+                          ),
                           height: 1200,
                           child: Column(
                             children: [
@@ -121,6 +123,7 @@ class GameDetailsView extends StatelessWidget {
                                   context.router.push(
                                     HideAndSeekRoute(
                                       details: game,
+                                      isSeeker: true,
                                     ),
                                   );
                                 },
