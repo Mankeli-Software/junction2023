@@ -11,10 +11,9 @@ import Webpanel from "@/components/webpanel"
 export default function WebGUI() {
     return (
         <>
-        <WebpanelHeader />
-        <Suspense fallback={<Loading />}>
-            <Webpanel />
-        </Suspense>
+            <Suspense fallback={<Loading />}>
+                <Webpanel />
+            </Suspense>
         </>
     )
 }

@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
-import PageIllustration from '@/components/page-illustration'
+import WebpanelHeader from '@/components/webpanel_header'
 import Footer from '@/components/ui/footer'
 
 export default function WebpanelLayout({
@@ -25,9 +25,8 @@ export default function WebpanelLayout({
 
   return (
     <>
+      <WebpanelHeader />
       <main className="grow">
-
-        <PageIllustration />
 
         {children}
 
