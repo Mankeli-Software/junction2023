@@ -56,7 +56,6 @@ class GameMenuView extends StatelessWidget {
         verticalAlignment: -0.7,
         sensorTypes: [
           SensorTypes.haptic,
-          SensorTypes.haptic,
           SensorTypes.gyroscope,
           SensorTypes.accelerometer,
           SensorTypes.location,
@@ -66,20 +65,32 @@ class GameMenuView extends StatelessWidget {
       const GameDetails(
         id: 'f5315a4f-13d8-4b81-91c8-3abb78ce6290',
         imgageUrl:
-            'https://firebasestorage.googleapis.com/v0/b/junior-movement-platform.appspot.com/o/DALL%C2%B7E%202023-11-10%2021.58.29%20-%20A%20graphic%20style%20banner%20for%20a%20hide%20and%20seek%20game.%20The%20background%20is%20a%20simple%2C%20solid%20orange%20color.%20There%20are%20silhouettes%20of%20characters%2C%20representing%20a%20v.png?alt=media&token=26c89239-76c5-446a-8d4a-9c1e30457119',
-        title: 'name',
+            "https://firebasestorage.googleapis.com/v0/b/junior-movement-platform.appspot.com/o/DALL%C2%B7E%202023-11-12%2002.25.48%20-%20A%20vibrant%20and%20child-friendly%20banner%20for%20a%20game%20called%20'Predator's%20Gambit'.%20The%20banner%20features%20cartoon-style%2C%20non-threatening%20depictions%20of%20animals%20in.png?alt=media&token=85d99d71-6bf8-4d2d-bcf1-41209a8d89c4",
+        title: "Predator's Gambit",
         decription:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis ipsum leo, id consectetur metus sollicitudin non. Donec a rutrum nunc. Vestibulum semper gravida diam nec malesuada. Proin suscipit venenatis nisl vitae efficitur. Cras at eleifend felis. In hac habitasse platea dictumst. Etiam aliquam rhoncus mauris at egestas. Praesent facilisis vulputate arcu eu dignissim. Suspendisse nulla felis, rutrum sit amet tempus sed, sagittis id metus.',
         subtitle: 'Hunt or Be Hunted',
+        verticalAlignment: 1,
+        sensorTypes: [
+          SensorTypes.haptic,
+          SensorTypes.gyroscope,
+          SensorTypes.accelerometer,
+        ],
       ),
       const GameDetails(
         id: '6175ad0f-0277-4f40-85cd-906cce04924d',
         imgageUrl:
-            'https://firebasestorage.googleapis.com/v0/b/junior-movement-platform.appspot.com/o/DALL%C2%B7E%202023-11-10%2021.58.29%20-%20A%20graphic%20style%20banner%20for%20a%20hide%20and%20seek%20game.%20The%20background%20is%20a%20simple%2C%20solid%20orange%20color.%20There%20are%20silhouettes%20of%20characters%2C%20representing%20a%20v.png?alt=media&token=26c89239-76c5-446a-8d4a-9c1e30457119',
-        title: 'Test',
+            "https://firebasestorage.googleapis.com/v0/b/junior-movement-platform.appspot.com/o/DALL%C2%B7E%202023-11-12%2002.30.42%20-%20A%20dynamic%20and%20colorful%20banner%20design%20for%20a%20kids'%20game%2C%20featuring%20a%20playful%20cop%20and%20criminal%20theme%2C%20without%20any%20text.%20The%20cop%20is%20a%20cartoon-style%20charac.png?alt=media&token=325f791e-e07f-4a23-a0fa-5ef7706b925d",
+        title: 'Catch the thief',
         decription:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis ipsum leo, id consectetur metus sollicitudin non. Donec a rutrum nunc. Vestibulum semper gravida diam nec malesuada. Proin suscipit venenatis nisl vitae efficitur. Cras at eleifend felis. In hac habitasse platea dictumst. Etiam aliquam rhoncus mauris at egestas. Praesent facilisis vulputate arcu eu dignissim. Suspendisse nulla felis, rutrum sit amet tempus sed, sagittis id metus.',
-        subtitle: 'subtitle todo',
+        subtitle: 'Exciting Chase Game for Kids',
+        verticalAlignment: -0.5,
+        sensorTypes: [
+          SensorTypes.microphone,
+          SensorTypes.accelerometer,
+          SensorTypes.compass,
+        ],
       ),
     ];
     final theme = context.theme;
@@ -161,12 +172,10 @@ class GameMenuView extends StatelessWidget {
                                   transitionOnUserGestures: true,
                                   tag: game.id,
                                   child: CachedNetworkImage(
-                                    alignment:
-                                        Alignment(0, game.verticalAlignment),
+                                    alignment: Alignment(0, game.verticalAlignment),
                                     fit: BoxFit.fitWidth,
                                     imageUrl: game.imgageUrl,
-                                    errorWidget: (context, url, error) =>
-                                        const Center(
+                                    errorWidget: (context, url, error) => const Center(
                                       child: FaIcon(
                                         FontAwesomeIcons.triangleExclamation,
                                       ),
@@ -177,12 +186,13 @@ class GameMenuView extends StatelessWidget {
                             ),
                             Padding(
                               padding: const EdgeInsets.symmetric(
-                                  horizontal: 15, vertical: 20),
+                                horizontal: 15,
+                                vertical: 20,
+                              ),
                               child: Row(
                                 children: [
                                   Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       Text(
