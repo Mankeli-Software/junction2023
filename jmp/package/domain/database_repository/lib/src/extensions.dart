@@ -1,7 +1,6 @@
 part of 'database_repository.dart';
 // ignore_for_file: prefer-match-file-name
 
-////// 
 /// {@template user_extension}
 /// Database related extensions on User model.
 /// {@endtemplate}
@@ -21,5 +20,3 @@ extension UserExtension on User {
     return User.fromJson(json);
   }
 }
-
-////// 

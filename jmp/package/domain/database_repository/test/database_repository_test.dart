@@ -15,7 +15,6 @@ import 'package:mocktail/mocktail.dart';
 import 'package:model/model.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
-////// 
 class MockFirebaseFirestore extends Mock implements FirebaseFirestore {}
 
 class MockCollectionReference<T> extends Mock
@@ -29,8 +28,6 @@ class MockFirebaseCore extends Mock
     with MockPlatformInterfaceMixin
     implements FirebasePlatform {}
 
-////// 
-
 class MockHiveBox extends Mock implements Box<dynamic> {}
 
 void main() {
@@ -38,17 +35,14 @@ void main() {
   late Box<dynamic> hiveBox;
   late DatabaseRepository databaseRepository;
 
-  ////// 
   late FirebaseFirestore firestore;
   late CollectionReference<Map<String, dynamic>> usersCollection;
   late DocumentReference<Map<String, dynamic>> userDocument;
-  ////// 
 
   const userId = 'userId';
 
   group('DatabaseRepository', () {
     setUp(() async {
-      ////// 
       const options = FirebaseOptions(
         apiKey: 'apiKey',
         appId: 'appId',
@@ -77,7 +71,6 @@ void main() {
       when(() => firestore.collection(DatabaseRepository.kUsersCollection))
           .thenReturn(usersCollection);
       when(() => usersCollection.doc(userId)).thenReturn(userDocument);
-      ////// 
 
       hiveBox = MockHiveBox();
       when(() => hiveBox.close()).thenAnswer((_) async {
@@ -86,9 +79,7 @@ void main() {
       when(() => hiveBox.name).thenReturn(DatabaseRepository.kDefaultHiveBox);
       when(() => hiveBox.isOpen).thenReturn(true);
       databaseRepository = DatabaseRepository.mockable(
-        ////// 
         firestore: firestore,
-        ////// 
         hiveBox: hiveBox,
       );
 
@@ -107,7 +98,6 @@ void main() {
       },
     );
 
-    ////// 
     group('UserExtension.fromDocumentSnapshot', () {
       test(
         'returns User.empty '
@@ -157,9 +147,6 @@ void main() {
       );
     });
 
-    ////// 
-
-    ////// 
     group('ensureUserInitialized', () {
       test(
         'right User is returned without side effects '
@@ -214,9 +201,6 @@ void main() {
       );
     });
 
-    ////// 
-
-    ////// 
     group('saveUser', () {
       test(
         'user is saved to database '
@@ -254,8 +238,6 @@ void main() {
         },
       );
     });
-
-    ////// 
 
     group('notification permission prompts', () {
       test(

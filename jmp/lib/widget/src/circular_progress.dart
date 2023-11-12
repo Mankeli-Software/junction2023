@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:j_mp/extension/extension.dart';
+import 'package:jmp/extension/extension.dart';
 
 /// {@template circular_progress}
 /// This reusable widget defines how every single circular progress indicator

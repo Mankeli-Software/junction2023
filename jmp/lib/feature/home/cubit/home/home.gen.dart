@@ -17,6 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$HomeState {
   HomeStatus get status => throw _privateConstructorUsedError;
+  PageRouteInfo<dynamic> get currentRoute => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $HomeStateCopyWith<HomeState> get copyWith =>
@@ -28,7 +29,7 @@ abstract class $HomeStateCopyWith<$Res> {
   factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
       _$HomeStateCopyWithImpl<$Res, HomeState>;
   @useResult
-  $Res call({HomeStatus status});
+  $Res call({HomeStatus status, PageRouteInfo<dynamic> currentRoute});
 }
 
 /// @nodoc
@@ -45,87 +46,109 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
   @override
   $Res call({
     Object? status = null,
+    Object? currentRoute = null,
   }) {
     return _then(_value.copyWith(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as HomeStatus,
+      currentRoute: null == currentRoute
+          ? _value.currentRoute
+          : currentRoute // ignore: cast_nullable_to_non_nullable
+              as PageRouteInfo<dynamic>,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_HomeStateCopyWith<$Res> implements $HomeStateCopyWith<$Res> {
-  factory _$$_HomeStateCopyWith(
-          _$_HomeState value, $Res Function(_$_HomeState) then) =
-      __$$_HomeStateCopyWithImpl<$Res>;
+abstract class _$$HomeStateImplCopyWith<$Res>
+    implements $HomeStateCopyWith<$Res> {
+  factory _$$HomeStateImplCopyWith(
+          _$HomeStateImpl value, $Res Function(_$HomeStateImpl) then) =
+      __$$HomeStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({HomeStatus status});
+  $Res call({HomeStatus status, PageRouteInfo<dynamic> currentRoute});
 }
 
 /// @nodoc
-class __$$_HomeStateCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$_HomeState>
-    implements _$$_HomeStateCopyWith<$Res> {
-  __$$_HomeStateCopyWithImpl(
-      _$_HomeState _value, $Res Function(_$_HomeState) _then)
+class __$$HomeStateImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$HomeStateImpl>
+    implements _$$HomeStateImplCopyWith<$Res> {
+  __$$HomeStateImplCopyWithImpl(
+      _$HomeStateImpl _value, $Res Function(_$HomeStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? status = null,
+    Object? currentRoute = null,
   }) {
-    return _then(_$_HomeState(
+    return _then(_$HomeStateImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as HomeStatus,
+      currentRoute: null == currentRoute
+          ? _value.currentRoute
+          : currentRoute // ignore: cast_nullable_to_non_nullable
+              as PageRouteInfo<dynamic>,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_HomeState implements _HomeState {
-  const _$_HomeState({this.status = HomeStatus.initializing});
+class _$HomeStateImpl implements _HomeState {
+  const _$HomeStateImpl(
+      {this.status = HomeStatus.initializing,
+      this.currentRoute = const GameMenuRoute()});
 
   @override
   @JsonKey()
   final HomeStatus status;
+  @override
+  @JsonKey()
+  final PageRouteInfo<dynamic> currentRoute;
 
   @override
   String toString() {
-    return 'HomeState(status: $status)';
+    return 'HomeState(status: $status, currentRoute: $currentRoute)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_HomeState &&
-            (identical(other.status, status) || other.status == status));
+            other is _$HomeStateImpl &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.currentRoute, currentRoute) ||
+                other.currentRoute == currentRoute));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, status);
+  int get hashCode => Object.hash(runtimeType, status, currentRoute);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_HomeStateCopyWith<_$_HomeState> get copyWith =>
-      __$$_HomeStateCopyWithImpl<_$_HomeState>(this, _$identity);
+  _$$HomeStateImplCopyWith<_$HomeStateImpl> get copyWith =>
+      __$$HomeStateImplCopyWithImpl<_$HomeStateImpl>(this, _$identity);
 }
 
 abstract class _HomeState implements HomeState {
-  const factory _HomeState({final HomeStatus status}) = _$_HomeState;
+  const factory _HomeState(
+      {final HomeStatus status,
+      final PageRouteInfo<dynamic> currentRoute}) = _$HomeStateImpl;
 
   @override
   HomeStatus get status;
   @override
+  PageRouteInfo<dynamic> get currentRoute;
+  @override
   @JsonKey(ignore: true)
-  _$$_HomeStateCopyWith<_$_HomeState> get copyWith =>
+  _$$HomeStateImplCopyWith<_$HomeStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

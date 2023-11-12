@@ -15,32 +15,20 @@ part 'extensions.dart';
 class DatabaseRepository extends Repository {
   /// {@macro database_repository}
   DatabaseRepository({
-    ////// 
     FirebaseApp? firebaseApp,
-    ////// 
     Box<dynamic>? hiveBox,
-  })  :
-        ////// 
-        _firestore =
+  })  : _firestore =
             FirebaseFirestore.instanceFor(app: firebaseApp ?? Firebase.app()),
-        ////// 
         _hiveBox = hiveBox;
 
   /// {@macro database_repository}
   DatabaseRepository.mockable({
-    ////// 
     required FirebaseFirestore firestore,
-    ////// 
     required Box<dynamic> hiveBox,
-  })  :
-        ////// 
-        _firestore = firestore,
-        ////// 
+  })  : _firestore = firestore,
         _hiveBox = hiveBox;
 
-  ////// 
   late final FirebaseFirestore _firestore;
-  ////// 
 
   /// The local ligthweigth database.
   Box<dynamic>? _hiveBox;
@@ -81,7 +69,6 @@ class DatabaseRepository extends Repository {
     return super.dispose();
   }
 
-  ////// 
   /// Ensures that the given [user]s data exists in the database. If the user does not exist, it is created.
   ///
   /// Returns the [User] object from the database.
@@ -101,9 +88,7 @@ class DatabaseRepository extends Repository {
 
     return firebaseUser;
   }
-  ////// 
 
-  ////// 
   /// Saves the given [user] to the database.
   Future<User> saveUser(User user) async {
     await _firestore
@@ -113,7 +98,6 @@ class DatabaseRepository extends Repository {
 
     return user;
   }
-  ////// 
 
   /// Whether the notification permissions have been asked on the current device or not.
   bool hasPromptedNotificationPermissions() {

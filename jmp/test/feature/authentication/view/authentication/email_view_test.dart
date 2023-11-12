@@ -6,9 +6,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:form_input/form_input.dart';
 import 'package:formz/formz.dart';
-import 'package:j_mp/feature/authentication/cubit/authentication/authentication.dart';
-import 'package:j_mp/feature/authentication/view/authentication/authentication.dart';
-import 'package:j_mp/utility/utility.dart';
+import 'package:jmp/feature/authentication/cubit/authentication/authentication.dart';
+import 'package:jmp/feature/authentication/view/authentication/authentication.dart';
+import 'package:jmp/utility/utility.dart';
 import 'package:mocktail/mocktail.dart';
 
 import '../../../../test_helper.dart';

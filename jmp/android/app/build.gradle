@@ -36,7 +36,7 @@ apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
-    compileSdkVersion flutter.compileSdkVersion
+    compileSdkVersion 33
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -54,7 +54,7 @@ android {
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "co.mankeli.jmp"
-        minSdkVersion flutter.minSdkVersion
+        minSdkVersion 21 // TODO(Juho): Does this break something? flutter.minSdkVersion
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
@@ -83,17 +83,17 @@ android {
         production {
             dimension "default"
             applicationIdSuffix ""
-            manifestPlaceholders = [appName: "J Mp"]
+            manifestPlaceholders = [appName: "J-mp"]
         }
         staging {
             dimension "default"
-            applicationIdSuffix ".stg"
-            manifestPlaceholders = [appName: "[STG] J Mp"]
+            applicationIdSuffix ""
+            manifestPlaceholders = [appName: "[STG] J-mp"]
         }
         development {
             dimension "default"
-            applicationIdSuffix ".dev"
-            manifestPlaceholders = [appName: "[DEV] J Mp"]
+            applicationIdSuffix ""
+            manifestPlaceholders = [appName: "[DEV] J-mp"]
         }
     }
 

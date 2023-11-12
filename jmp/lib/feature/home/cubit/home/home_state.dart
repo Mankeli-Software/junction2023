@@ -7,8 +7,8 @@ part of 'home.dart';
 class HomeState with _$HomeState {
   /// {@macro home_state}
   const factory HomeState({
-    @Default(HomeStatus.initializing)
-        HomeStatus status,
+    @Default(HomeStatus.initializing) HomeStatus status,
+    @Default(GameMenuRoute()) PageRouteInfo currentRoute,
   }) = _HomeState;
 }
 

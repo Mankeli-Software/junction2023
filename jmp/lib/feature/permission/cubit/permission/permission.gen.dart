@@ -97,11 +97,11 @@ class _$PermissionStateCopyWithImpl<$Res, $Val extends PermissionState>
 }
 
 /// @nodoc
-abstract class _$$_PermissionStateCopyWith<$Res>
+abstract class _$$PermissionStateImplCopyWith<$Res>
     implements $PermissionStateCopyWith<$Res> {
-  factory _$$_PermissionStateCopyWith(
-          _$_PermissionState value, $Res Function(_$_PermissionState) then) =
-      __$$_PermissionStateCopyWithImpl<$Res>;
+  factory _$$PermissionStateImplCopyWith(_$PermissionStateImpl value,
+          $Res Function(_$PermissionStateImpl) then) =
+      __$$PermissionStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -113,11 +113,11 @@ abstract class _$$_PermissionStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_PermissionStateCopyWithImpl<$Res>
-    extends _$PermissionStateCopyWithImpl<$Res, _$_PermissionState>
-    implements _$$_PermissionStateCopyWith<$Res> {
-  __$$_PermissionStateCopyWithImpl(
-      _$_PermissionState _value, $Res Function(_$_PermissionState) _then)
+class __$$PermissionStateImplCopyWithImpl<$Res>
+    extends _$PermissionStateCopyWithImpl<$Res, _$PermissionStateImpl>
+    implements _$$PermissionStateImplCopyWith<$Res> {
+  __$$PermissionStateImplCopyWithImpl(
+      _$PermissionStateImpl _value, $Res Function(_$PermissionStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -129,7 +129,7 @@ class __$$_PermissionStateCopyWithImpl<$Res>
     Object? restrictedPermissions = null,
     Object? status = null,
   }) {
-    return _then(_$_PermissionState(
+    return _then(_$PermissionStateImpl(
       permissionScope: null == permissionScope
           ? _value._permissionScope
           : permissionScope // ignore: cast_nullable_to_non_nullable
@@ -156,8 +156,8 @@ class __$$_PermissionStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_PermissionState implements _PermissionState {
-  const _$_PermissionState(
+class _$PermissionStateImpl implements _PermissionState {
+  const _$PermissionStateImpl(
       {final List<Permission> permissionScope = const [],
       final List<Permission> permissionsToGrant = const [],
       final List<Permission> permanentlyDeniedPermissions = const [],
@@ -233,7 +233,7 @@ class _$_PermissionState implements _PermissionState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PermissionState &&
+            other is _$PermissionStateImpl &&
             const DeepCollectionEquality()
                 .equals(other._permissionScope, _permissionScope) &&
             const DeepCollectionEquality()
@@ -258,8 +258,9 @@ class _$_PermissionState implements _PermissionState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PermissionStateCopyWith<_$_PermissionState> get copyWith =>
-      __$$_PermissionStateCopyWithImpl<_$_PermissionState>(this, _$identity);
+  _$$PermissionStateImplCopyWith<_$PermissionStateImpl> get copyWith =>
+      __$$PermissionStateImplCopyWithImpl<_$PermissionStateImpl>(
+          this, _$identity);
 }
 
 abstract class _PermissionState implements PermissionState {
@@ -268,7 +269,7 @@ abstract class _PermissionState implements PermissionState {
       final List<Permission> permissionsToGrant,
       final List<Permission> permanentlyDeniedPermissions,
       final List<Permission> restrictedPermissions,
-      final PermissionStateStatus status}) = _$_PermissionState;
+      final PermissionStateStatus status}) = _$PermissionStateImpl;
 
   @override
 
@@ -292,6 +293,6 @@ abstract class _PermissionState implements PermissionState {
   PermissionStateStatus get status;
   @override
   @JsonKey(ignore: true)
-  _$$_PermissionStateCopyWith<_$_PermissionState> get copyWith =>
+  _$$PermissionStateImplCopyWith<_$PermissionStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

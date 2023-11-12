@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:j_mp/feature/feature.dart';
-import 'package:j_mp/main/launch_helper.dart';
-import 'package:j_mp/resource/resource.dart';
-import 'package:j_mp/utility/utility.dart';
+import 'package:jmp/feature/feature.dart';
+import 'package:jmp/main/launch_helper.dart';
+import 'package:jmp/resource/resource.dart';
+import 'package:jmp/utility/utility.dart';
 import 'package:model/model.dart';
 import 'package:provider/provider.dart';
 

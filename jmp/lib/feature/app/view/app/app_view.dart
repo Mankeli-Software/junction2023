@@ -23,17 +23,11 @@ class AppView extends StatelessWidget {
 
         return AutoRouter.declarative(
           routes: (_) => [
-            if (state.startupLogicStatus == StartupLogicStatus.running
-                ////// 
-                ||
-                state.currentUser.isEmpty
-            ////// 
-            )
+            if (state.startupLogicStatus == StartupLogicStatus.running ||
+                state.currentUser.isEmpty)
               const LoadingRoute()
-            ////// 
             else if (state.currentUser.isUnAuthenticated)
               const AuthenticationRoute()
-            ////// 
             else
               HomeRoute(),
           ],

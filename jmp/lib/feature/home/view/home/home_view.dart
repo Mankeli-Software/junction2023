@@ -15,8 +15,18 @@ class HomeView extends StatelessWidget {
   @visibleForTesting
   final bool isTest;
 
+  static const _pages = [
+    MenuRoute(),
+    GameMenuRoute(),
+    ProfileRoute(),
+  ];
+
   @override
   Widget build(BuildContext context) {
+    final theme = context.theme;
+    final selectedColor = theme.primaryColor;
+    final unselectedColor = theme.onBackgroundColor.withOpacity(0.9);
+
     return BlocConsumer<HomeCubit, HomeState>(
       listenWhen: (s1, s2) => true,
       listener: (context, state) {
@@ -26,7 +36,49 @@ class HomeView extends StatelessWidget {
       builder: (context, state) {
         if (isTest) return const Placeholder();
 
-        return const AutoRouter();
+        return Scaffold(
+          extendBody: true,
+          bottomNavigationBar: DotNavigationBar(
+            boxShadow: [
+              BoxShadow(
+                color: theme.textColor.withOpacity(0.2),
+                blurRadius: 7,
+                offset: const Offset(0, 4),
+              ),
+            ],
+            selectedItemColor: selectedColor,
+            unselectedItemColor: unselectedColor,
+            backgroundColor: theme.backgroundColor,
+            dotIndicatorColor: Colors.transparent,
+            enablePaddingAnimation: false,
+            currentIndex: _pages.indexOf(state.currentRoute),
+            onTap: (index) {
+              context.read<HomeCubit>().setRoute(_pages[index]);
+            },
+            items: [
+              DotNavigationBarItem(
+                icon: const FaIcon(
+                  FontAwesomeIcons.bars,
+                ),
+              ),
+              DotNavigationBarItem(
+                icon: const FaIcon(
+                  FontAwesomeIcons.gamepad,
+                ),
+              ),
+              DotNavigationBarItem(
+                icon: const FaIcon(
+                  FontAwesomeIcons.user,
+                ),
+              ),
+            ],
+          ),
+          body: AutoRouter.declarative(
+            routes: (handler) => [
+              state.currentRoute,
+            ],
+          ),
+        );
       },
     );
   }

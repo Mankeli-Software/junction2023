@@ -26,7 +26,8 @@ class PermissionRepository extends Repository {
     PermissionStatus.restricted: 1,
     PermissionStatus.denied: 2,
     PermissionStatus.limited: 3,
-    PermissionStatus.granted: 4,
+    PermissionStatus.provisional: 4,
+    PermissionStatus.granted: 5,
   };
 
   /// This map contains all of the permissions that the app needs, along with their minimun status. See [permissionStatusRanks] for the rank of each status.

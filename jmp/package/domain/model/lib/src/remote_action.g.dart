@@ -6,26 +6,28 @@ part of 'remote_action.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$PushRouteAction _$$PushRouteActionFromJson(Map<String, dynamic> json) =>
-    _$PushRouteAction(
+_$PushRouteActionImpl _$$PushRouteActionImplFromJson(
+        Map<String, dynamic> json) =>
+    _$PushRouteActionImpl(
       routeName: json['routeName'] as String,
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$PushRouteActionToJson(_$PushRouteAction instance) =>
+Map<String, dynamic> _$$PushRouteActionImplToJson(
+        _$PushRouteActionImpl instance) =>
     <String, dynamic>{
       'routeName': instance.routeName,
       'runtimeType': instance.$type,
     };
 
-_$InvalidRemoteAction _$$InvalidRemoteActionFromJson(
+_$InvalidRemoteActionImpl _$$InvalidRemoteActionImplFromJson(
         Map<String, dynamic> json) =>
-    _$InvalidRemoteAction(
+    _$InvalidRemoteActionImpl(
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$InvalidRemoteActionToJson(
-        _$InvalidRemoteAction instance) =>
+Map<String, dynamic> _$$InvalidRemoteActionImplToJson(
+        _$InvalidRemoteActionImpl instance) =>
     <String, dynamic>{
       'runtimeType': instance.$type,
     };

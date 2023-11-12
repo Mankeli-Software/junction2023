@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:j_mp/main/launch_helper.dart';
-import 'package:j_mp/resource/resource.dart';
+import 'package:jmp/main/launch_helper.dart';
+import 'package:jmp/resource/resource.dart';
 
 /// {@template assets_extension}
 /// Extension methods for [Assets] to make it easier to work with assets.

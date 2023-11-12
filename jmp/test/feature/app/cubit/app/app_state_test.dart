@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:j_mp/feature/app/app.dart';
+import 'package:jmp/feature/app/app.dart';
 
 void main() {
   group(

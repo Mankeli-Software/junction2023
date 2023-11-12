@@ -1,4 +1,4 @@
-name: j_mp
+name: jmp
 version: 1.0.0+1
 publish_to: none
 description: A platform for making juniors move
@@ -23,26 +23,34 @@ dependencies:
     path: package/domain/database_repository
   deep_link_repository:
     path: package/domain/deep_link_repository
+  dot_navigation_bar: ^1.0.2
+  firebase_core: any
+  firebase_core_platform_interface: any
   firebase_crashlytics: ^3.1.0
   firebase_remote_config: ^4.2.0
   flutter:
     sdk: flutter
-  flutter_bloc: any
+  flutter_bloc: ^8.1.3
+  flutter_compass: ^0.8.0
   flutter_localizations:
     sdk: flutter
   flutter_native_splash: any
   flutter_spinkit: any
   flutter_svg: 2.0.3
+  font_awesome_flutter: ^10.6.0
   form_input:
     path: package/application/form_input
   formz: any
-  freezed: ^2.3.2
-  freezed_annotation: ^2.2.0
-  google_fonts: ^3.0.1
+  freezed: ^2.4.5
+  freezed_annotation: ^2.4.1
+  geolocator: ^10.1.0
+  google_fonts: ^4.0.1
   intl: any
   json_annotation: ^4.8.0
   json_serializable: ^6.6.1
+  latlong2: ^0.9.0
   mankeli_core: ^0.0.2
+  mobile_scanner: ^3.5.2
   model:
     path: package/domain/model
   notification_repository:
@@ -51,20 +59,23 @@ dependencies:
   permission_repository:
     path: package/domain/permission_repository
   provider: ^6.0.5
+  qr_flutter: ^4.1.0
+  sensors_plus: ^3.1.0
   storage_repository:
     path: package/domain/storage_repository
+  vibration: ^1.8.3
 
 dev_dependencies:
   auto_route_generator: ^6.1.0
-  bloc_test: ^9.1.1
-  build_runner: ^2.3.3 # Usage: dart run build_runner build
+  bloc_test: ^9.1.5
+  build_runner: ^2.4.6 # Usage: dart run build_runner build
   dart_code_metrics: any
   flutter_gen_runner: ^5.1.0+1
   flutter_test:
     sdk: flutter
   icons_launcher: ^2.1.0
   mankeli_analysis: ^1.1.0
-  mocktail: ^0.3.0
+  mocktail: ^1.0.1
   plugin_platform_interface: any
 
 flutter_gen:
