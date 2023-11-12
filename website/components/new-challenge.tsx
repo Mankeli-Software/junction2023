@@ -76,7 +76,7 @@ export default function NewChallenge() {
 
   return (
     <React.Fragment>
-      <Button className="btn-sm text-white p-3 bg-purple-600 hover:bg-purple-500" variant="outlined" onClick={handleClickOpen}>
+      <Button className="" variant="outlined" onClick={handleClickOpen}>
         Create Challenge
       </Button>
       <Dialog open={open} onClose={handleClose}>
